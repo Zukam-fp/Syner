@@ -9,10 +9,21 @@
   padding: 8px;
   border-radius: 8px;
   display: flex;
+  height: 150px;
+  margin-bottom: 32px;
 }
 .note {
   margin-left: 88px;
 }
 .notes {
   margin-left: 80px;
+}
+.pi {
+  font-size: small;
+  text-align: center;
+}
+.biz {
+  height: 90vh;
+    overflow: hidden;
+    overflow-y: scroll;
 }
