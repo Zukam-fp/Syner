@@ -11,10 +11,12 @@ require 'faker'
 
 puts "cleaning database"
 # Nettoyer la base de données
-User.destroy_all
+UserTeam.destroy_all
 Team.destroy_all
 Match.destroy_all
-UserTeam.destroy_all
+ChatRoom.destroy_all
+User.destroy_all
+
 
 puts "generate user"
 # Générer des données pour la table User
@@ -36,52 +38,49 @@ puts "generate faker user"
 end
 puts "faker user created"
 
-puts "generate faker team"
-teams = []
-10.times do
-  teams << Team.create!(
-    name: Faker::Sports::Football.team,
-    score: 0
-  )
+puts "generate matches and teams"
+# Pour chaque utilisateur
+User.all.each do |user|
+  # Enregistrer l'utilisateur
+  chatroom = ChatRoom.create!
+  # Créer un match
+  match = Match.create!(user: user, chat_room: chatroom, number_of_places: 10, address: "rue de la victoire", date: Date.today + 1.day)
+
+  # Créer 2 équipes
+    Team.create!(match: match, name: "A")
+    Team.create!(match: match, name: "B")
 end
+puts "matches and teams created"
+
+puts "generate faker team"
+teams = Match.all.map(&:teams).flatten
 puts "faker team created"
 
 puts "generate user_team"
 # Générer des données pour la table UserTeam
 position = ["goalkeeper", "defender", "middlefielder", "attacker"]
 User.all.each do |user|
+  team = teams.sample
+  p team
   UserTeam.create!(team: teams.sample, user_id: user.id, user_position: position.sample)
 end
 puts "user_team created"
 
-# puts "generate matches and teams"
-# # Pour chaque utilisateur
-# User.all.each do |user|
-#   # Créer un match
-#   match = Match.create(user: user)
+puts "assign users to teams"
+# Pour chaque match
+Match.all.each do |match|
+  # Sélectionner 5 utilisateurs pour chaque équipe
+  team_a_users = User.all.sample(5)
+  team_b_users = (User.all - team_a_users).sample(5)
 
-#   # Créer 2 équipes
-#   2.times do
-#     Team.create(match: match)
-#   end
-# end
-# puts "matches and teams created"
+  # Assigner les utilisateurs à l'équipe A
+  team_a_users.each do |user|
+    UserTeam.create(user: user, team: match.teams.first)
+  end
 
-# puts "assign users to teams"
-# # Pour chaque match
-# Match.all.each do |match|
-#   # Sélectionner 5 utilisateurs pour chaque équipe
-#   team_a_users = User.all.sample(5)
-#   team_b_users = (User.all - team_a_users).sample(5)
-
-#   # Assigner les utilisateurs à l'équipe A
-#   team_a_users.each do |user|
-#     UserTeam.create(user: user, team: match.teams.first)
-#   end
-
-#   # Assigner les utilisateurs à l'équipe B
-#   team_b_users.each do |user|
-#     UserTeam.create(user: user, team: match.teams.second)
-#   end
-# end
-# puts "users to teams assigned"
+  # Assigner les utilisateurs à l'équipe B
+  team_b_users.each do |user|
+    UserTeam.create(user: user, team: match.teams.second)
+  end
+end
+puts "users to teams assigned"
