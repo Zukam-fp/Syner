@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_06_160435) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_07_110116) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,6 +57,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_06_160435) do
     t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "match_id", null: false
+    t.index ["match_id"], name: "index_teams_on_match_id"
   end
 
   create_table "user_teams", force: :cascade do |t|
@@ -89,6 +91,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_06_160435) do
   add_foreign_key "messages", "chat_rooms"
   add_foreign_key "messages", "users"
   add_foreign_key "ratings", "user_teams"
+  add_foreign_key "teams", "matches"
   add_foreign_key "user_teams", "teams"
   add_foreign_key "user_teams", "users"
 end
