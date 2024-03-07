@@ -1,9 +1,9 @@
 .logo {
-  width: 100px;
+  width: 80px;
   border-radius: 50%;
+  background-color: purple;
 }
 .bas {
-  margin-left: -104px;
   justify-content: center;
 }
 .nav-logo {
@@ -14,9 +14,14 @@
   border-radius: 5px;
   border-color: white;
 }
-
 .nav-logo:hover {
-  background-color: red;
+  background-color: pink;
   transition: 0.2s;
   border-color:black;
+}
+.left {
+  margin-right: 30px;
+}
+.right {
+  margin-left: 30px;
 }

@@ -1,11 +1,9 @@
 <div class= "fixed-bottom navbar bas">
-  <div class="nav-logo">
-    <%= link_to raw('<i class="fa-solid fa-crown"></i>'), root_path %>
-  </div>
-  <div class="nav-logo">
-    <%= link_to raw('<i class="fa-solid fa-user"></i>'), root_path %>
-  </div>
+  <%= link_to raw('<i class="fa-solid fa-crown"></i>'), root_path, class:"nav-logo left"%>
+  <%= link_to raw('<i class="fa-solid fa-user"></i>'), root_path, class:"nav-logo left" %>
   <%= link_to root_path do %>
     <%= image_tag "logo-syner_preview_rev_1.png", class:"logo" %>
   <% end %>
+  <%= link_to raw('<i class="fa-solid fa-map"></i>'), root_path, class:"nav-logo right" %>
+  <%= link_to raw('<i class="fa-solid fa-message"></i>'), root_path, class:"nav-logo right" %>
 </div>
