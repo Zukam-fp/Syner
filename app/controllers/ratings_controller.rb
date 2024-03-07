@@ -1,4 +1,7 @@
 class RatingsController < ApplicationController
+  def show
+  end
+
   def new
     @rating = Rating.new
   end
