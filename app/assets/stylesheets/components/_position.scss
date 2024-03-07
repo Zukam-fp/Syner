@@ -1,0 +1,24 @@
+.img-position {
+  width: 50px;
+}
+
+.field {
+  width: 100%;
+  height: 68vh;
+  background-image: url("terrain_black_2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-top: 58px;
+}
+
+.card-goalkeeper {
+  display: flex;
+  justify-content: center;
+}
+
+.card-players {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+}
