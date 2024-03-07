@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_06_120117) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_06_160435) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,18 +55,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_06_120117) do
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.integer "score"
-    t.bigint "user_team_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_team_id"], name: "index_teams_on_user_team_id"
   end
 
   create_table "user_teams", force: :cascade do |t|
-    t.string "name"
     t.integer "user_position"
     t.bigint "user_id", null: false
+    t.bigint "team_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_user_teams_on_team_id"
     t.index ["user_id"], name: "index_user_teams_on_user_id"
   end
 
@@ -90,6 +89,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_06_120117) do
   add_foreign_key "messages", "chat_rooms"
   add_foreign_key "messages", "users"
   add_foreign_key "ratings", "user_teams"
-  add_foreign_key "teams", "user_teams"
+  add_foreign_key "user_teams", "teams"
   add_foreign_key "user_teams", "users"
 end
