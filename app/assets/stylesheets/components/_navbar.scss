@@ -2,9 +2,12 @@
   width: 80px;
   border-radius: 50%;
   background-color: purple;
+  border-color: white;
 }
 .bas {
   justify-content: center;
+  border-top: solid;
+  border-color: grey;
 }
 .nav-logo {
   color: white;
@@ -13,6 +16,11 @@
   padding: 1% 2%;
   border-radius: 5px;
   border-color: white;
+}
+.logo:hover {
+  transition: 0.2s;
+  background-color: pink;
+  border-color: black;
 }
 .nav-logo:hover {
   background-color: pink;
