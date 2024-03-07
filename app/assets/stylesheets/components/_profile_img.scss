@@ -1,3 +1,23 @@
-.img-profile {
-  width: 130px;
+.div {
+  display: flex;
+  max-width: 338px;
+  flex-direction: column;
+}
+.img-top {
+  background-image: url("haut.png");
+  background-size: contain;
+  height: 62%;
+  width: 100px;
+  background-repeat: no-repeat;
+
+}
+.img-bot{
+  background-image: url("bas.png");
+  background-size: contain;
+  height: 56%;
+  width: 100px;
+  background-repeat: no-repeat;
+}
+.taille {
+  width: 100px;
 }
