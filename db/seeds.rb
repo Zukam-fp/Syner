@@ -39,13 +39,16 @@ end
 puts "faker user created"
 
 puts "generate matches and teams"
+
+adresses = ["100 Av. Willy Brandt, Lille", "2 Av. des Saules, 59160 Lille", " 40 Rue de Béthune, 59800 Lille", "jean baptiste lebas, Lille", "rue de paris, Lille", "rue nationale, Lille", "rue gambetta, Lille", "rue des postes, Lille", "Rue Pierre Mauroy,Lille", "82 Rue du Molinel, 59000 Lille","17 Rue du Molinel, 59000 Lille","16 Rue du Molinel, 59000 Lille","15 Rue du Molinel, 59000 Lille","14 Rue du Molinel, 59000 Lille","13 Rue du Molinel, 59000 Lille","12 Rue du Molinel, 59000 Lille"]
 # Pour chaque utilisateur
-User.all.each do |user|
+User.all.each_with_index do |user, index|
+  p user
   # Enregistrer l'utilisateur
   chatroom = ChatRoom.create!
   # Créer un match
-  match = Match.create!(user: user, chat_room: chatroom, number_of_places: 10, address: "rue de la victoire", date: Date.today + 1.day)
-
+  p match = Match.create!(user: user, chat_room: chatroom, number_of_places: 10, address: adresses[index], date: Date.today + 1.day)
+  p user
   # Créer 2 équipes
     Team.create!(match: match, name: "A")
     Team.create!(match: match, name: "B")
