@@ -15,3 +15,23 @@
   font-weight: bold;
   padding-top: 17px;
 }
+
+.img-position {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.img-position:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.box {
+  display: flex;
+    background-color: rgb(47, 47, 47);
+    height: 185px;
+    margin-left: 18px;
+    margin-right: 18px;
+    margin-top: 12px;
+    border-radius: 5px;
+}
