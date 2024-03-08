@@ -8,5 +8,13 @@ class PagesController < ApplicationController
     @user1 = User.all.first
     @user2 = User.all.second
     @user3 = User.all.third
+    @matches = Match.all
+    @markers = @matches.geocoded.map do |match|
+      {
+        lat: match.latitude,
+        lng: match.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {match: match})
+      }
+    end
   end
 end
