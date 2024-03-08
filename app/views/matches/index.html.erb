@@ -1,5 +1,6 @@
 
 <div class="container biz">
+  <%= link_to image_tag("icons8-u-tourner-à-gauche-80.png"), root_path %>
   <div class="title-style">
     <h1>All Rooms :</h1>
   </div>
@@ -19,6 +20,7 @@
       </div>
       <div class="note">
         <p><%= match.number_of_places %>/10</p>
+        <%= link_to raw('<button type="button" class="btn btn-primary">See details</button>'), match_path(match), class:"su" %>
       </div>
     </div>
   <% end %>
