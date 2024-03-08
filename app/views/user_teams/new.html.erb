@@ -1,0 +1,47 @@
+<!-- Team 1 -->
+<div class="field2" data-controller="positions">
+
+    <div class="card-goalkeeper2" data-action="click->positions#selectPosition" data-team=<%= @match.teams.first.id %> data-position="goalkeeper" data-positions-target="role">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png" class="img-position">
+      <%= render 'form', match: @match, user_team: @user_team %>
+    </div>
+
+
+    <div class="card-players2" data-action="click->positions#selectPosition"data-team=<%= @match.teams.first.id %> data-position="defence" data-positions-target="role">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
+      <%= render 'form', match: @match, user_team: @user_team %>
+    </div>
+
+
+    <div class="card-players2" data-action="click->positions#selectPosition" data-team=<%= @match.teams.first.id %> data-position="attack" data-positions-target="role">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
+      <%= render 'form', match: @match, user_team: @user_team %>
+    </div>
+
+
+    <!-- Team 2 -->
+
+    <div class="card-players2" data-action="click->positions#selectPosition" data-team=<%= @match.teams.last.id %> data-position="attack" data-positions-target="role">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
+      <%= render 'form', match: @match, user_team: @user_team %>
+    </div>
+
+
+    <div class="card-players2" data-action="click->positions#selectPosition" data-team=<%= @match.teams.last.id %> data-position="defence" data-positions-target="role">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
+      <%= render 'form', match: @match, user_team: @user_team%>
+    </div>
+
+
+    <div class="card-goalkeeper2" data-action="click->positions#selectPosition" data-team=<%= @match.teams.last.id %> data-position="goalkeeper" data-positions-target="role">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png" class="img-position">
+      <%= render 'form', match: @match, user_team: @user_team%>
+    </div>
+
+</div>
+
+<div><div class="box"></div></div>

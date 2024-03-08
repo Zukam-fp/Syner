@@ -22,3 +22,24 @@
   justify-content: space-around;
   margin-top: 25px;
 }
+
+.field2 {
+  width: 100%;
+  height: 56vh;
+  background-image: url("terrain_black_2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-top: 58px;
+}
+
+.card-goalkeeper2 {
+  display: flex;
+  justify-content: center;
+}
+
+.card-players2 {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0px;
+}
