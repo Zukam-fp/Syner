@@ -1,0 +1,148 @@
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 20px;
+  background: #b379df;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #9a5bcb;
+  color: white;
+}
+
+.Btn4,
+.Btn5 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .btn {
+    margin: 0 10px; // Ajoute un espace entre les boutons
+  }
+}
+
+.Btn4 {
+  margin-top: 585px;
+}
+
+.title2 {
+  text-align: center;
+  color: white;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 20px;
+  background: #b379df;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #9a5bcb;
+  color: white;
+}
+
+.Btn4,
+.Btn5 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .btn {
+    margin: 0 10px;
+  }
+}
+
+.Btn4 {
+  margin-top: 38px;
+  justify-content: space-between;
+}
+
+.title2 {
+  text-align: center;
+  color: white;
+}
+
+.div17 {
+  display: flex;
+  max-width: 338px;
+  flex-direction: column;
+  align-items: center;
+  height: 521px;
+  margin: 0 auto;
+}
+
+.img-top17,
+.img-bot17 {
+  background-size: contain;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.img-top17 {
+  background-image: url("haut.png");
+  height: 62%;
+  background-size: cover;
+}
+
+.img-bot17 {
+  background-image: url("bas.png");
+  background-size: cover;
+  height: 56%;
+}
+
+h2,
+.h2 {
+  margin: 8px;
+  font-size: calc(1.325rem + 0.9vw);
+  text-align: center;
+}
+
+.ratings-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  margin-right: 5px;
+}
+
+.stars {
+  cursor: pointer;
+}
+
+.stars .fas {
+  color: #ffd700;
+}
+
+// p,
+// .p {
+//   display: grid;
+//   margin-left: 10px;
+// }
+
+// .ratings-container {
+//   display: flex;
+//   justify-content: space-around; // Cela répartit uniformément l'espace entre les éléments
+//   align-items: center; // Cela centre les éléments verticalement
+
+//   .rating {
+//     display: flex;
+//     align-items: center;
+
+//     .label {
+//       margin-right: 5px; // Ajoute un espace entre le label et les étoiles
+//     }
+
+//     // .stars {
+//     //   // Ici, vous pouvez ajouter votre code pour les étoiles
+//     // }
+//   }
+// }

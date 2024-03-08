@@ -1,13 +1,38 @@
-.card-event {
-  color: white;
-  background-color: #BF02EE;
-  padding: 2%;
-  border-radius: 21px;
-  margin-top: 20px;
-}
 .title-home {
   text-align: center;
 }
 .H {
   margin-top: 26px;
+}
+.bouton {
+  margin-left: 256px;
+}
+.pi10 {
+  font-size: small;
+  text-align: center;
+  color: white;
+}
+.div10 {
+  // display: flex;
+  // max-width: 338px;
+  // flex-direction: column;
+  margin-left: 136px;
+}
+.img-top10 {
+  background-image: url("haut.png");
+  background-size: contain;
+  height: 80px;
+  width: 100px;
+  background-repeat: no-repeat;
+
+}
+.img-bot10 {
+  background-image: url("bas.png");
+  background-size: contain;
+  height: 72px;
+  width: 100px;
+  background-repeat: no-repeat;
+}
+.feur {
+  margin-top: 50px;
 }

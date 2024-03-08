@@ -1,14 +1,27 @@
-<div class="container">
+
+<div class="container biz">
+  <%= link_to image_tag("icons8-u-tourner-à-gauche-80.png"), root_path %>
   <div class="title-style">
     <h1>All Rooms :</h1>
   </div>
-  <div class="card-matches">
-    <%= image_tag"Group 1473.png", class:"img-profile" %>
-    <div class="notes">
-      <p>Joseph Staline</p>
+  <% Match.all.each do |match| %>
+    <div class="card-matches">
+      <div class="div">
+          <div class="img-top">
+          </div>
+          <div class="img-bot">
+            <div class="pi">
+              <%= match.user.first_name %>
+            </div>
+          </div>
+      </div>
+      <div class="notes">
+          <%= match.date %>
+      </div>
+      <div class="note">
+        <p><%= match.number_of_places %>/10</p>
+        <%= link_to raw('<button type="button" class="btn btn-primary">See details</button>'), match_path(match), class:"su" %>
+      </div>
     </div>
-    <div class="note">
-      <p>9/10</p>
-    </div>
-  </div>
+  <% end %>
 </div>

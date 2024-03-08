@@ -1,17 +1,154 @@
-
-
 <div class="container">
-  <div class="card-event">
-    <div class="title-home">
-      <h1>Event :</h1>
-    </div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit cupiditate dolore at quisquam unde laudantium officia. Magnam saepe in autem, eius tempora minus dolorum esse commodi iste recusandae labore. Incidunt.</p>
-  </div>
+  <%= link_to raw('<button type="button" class="btn btn-primary">All rooms</button>'), matches_path, class:"bouton"%>
   <div class="title-style H">
     <h2> Room soon complete :</h2>
   </div>
-  <div class="card-matches">
-    <p>hello my name is Joseph Staline</p>
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        Room 1 :
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+      <div class="accordion-body">
+         <div class="card-matches">
+      <div class="div">
+          <div class="img-top">
+          </div>
+          <div class="img-bot">
+            <div class="pi">
+              <%= @match_sort.user.first_name %>
+            </div>
+          </div>
+      </div>
+      <div class="notes">
+          <%= @match_sort.date %>
+      </div>
+      <div class="note">
+        <p><%= @match_sort.number_of_places %>/10</p>
+        <p><%= link_to raw('<button type="button" class="btn btn-primary">See details</button>'), match_path(@match_sort), class:"su" %></p>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+        Room 2 :
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+      <div class="accordion-body">
+         <div class="card-matches">
+      <div class="div">
+          <div class="img-top">
+          </div>
+          <div class="img-bot">
+            <div class="pi">
+              <%= @match_sort2.user.first_name %>
+            </div>
+          </div>
+      </div>
+      <div class="notes">
+          <%= @match_sort2.date %>
+      </div>
+      <div class="note">
+        <p><%= @match_sort2.number_of_places %>/10</p>
+         <p><%= link_to raw('<button type="button" class="btn btn-primary">See details</button>'), match_path(@match_sort2), class:"su" %></p>
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        Room 3 :
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+      <div class="accordion-body">
+         <div class="card-matches">
+      <div class="div">
+          <div class="img-top">
+          </div>
+          <div class="img-bot">
+            <div class="pi">
+              <%= @match_sort3.user.first_name %>
+            </div>
+          </div>
+      </div>
+      <div class="notes">
+          <%= @match_sort3.date %>
+      </div>
+      <div class="note">
+        <p><%= @match_sort3.number_of_places %>/10</p>
+         <p><%= link_to raw('<button type="button" class="btn btn-primary">See details</button>'), match_path(@match_sort3), class:"su" %></p>
+      </div>
+    </div>
+      </div>
+    </div>
   </div>
 </div>
 
+
+
+
+<%# ------------------------ CAROUSEL -------------------------- %>
+
+  <div id="carouselExample" class="carousel slide feur">
+    <div class="title-style H">
+      <h2>Our best players :</h2>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="div10">
+          <div class="img-top10"></div>
+          <div class="img-bot10">
+            <div class="pi10">
+              <%= @user1.first_name %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="div10">
+          <div class="img-top10"></div>
+          <div class="img-bot10">
+            <div class="pi10">
+              <%= @user2.first_name %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="div10">
+          <div class="img-top10"></div>
+          <div class="img-bot10">
+            <div class="pi10">
+              <%= @user3.first_name %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+
+<%# ---------------------------map---------------------------- %>
+<div style="width: 100%; height: 600px; margin-top: 100px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
