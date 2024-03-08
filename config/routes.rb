@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   get "/rating", to: "ratings#show"
 
   get '/vote', to: 'votes#vote'
+  resources :profil, only: [:show, :edit, :update, :destroy]
 
   resources :matches
   # Defines the root path route ("/")
