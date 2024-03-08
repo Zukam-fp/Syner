@@ -1,65 +1,32 @@
-.logosyner {
-  height: 140px;
-  max-width: 100%;
-  display: block;
-  margin: 0 auto;
-  margin-top: 33%;
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 20px;
+  background: #b379df;
+  transition: background 0.3s ease;
 }
-.btn-danger {
-  background-color: #c21292;
-  margin-top: 40%;
+
+.btn-flat:hover {
+  background: #9a5bcb;
+  color: white;
 }
-.button-90 {
-  color: #fff;
-  padding: 15px 25px;
-  border-radius: 100px;
-  background-color: #9f1254;
-  background-image: radial-gradient(
-      93% 87% at 87% 89%,
-      rgba(0, 0, 0, 0.23) 0%,
-      transparent 86.18%
-    ),
-    radial-gradient(
-      66% 87% at 26% 20%,
-      rgba(255, 255, 255, 0.41) 0%,
-      rgba(255, 255, 255, 0) 69.79%,
-      rgba(255, 255, 255, 0) 100%
-    );
-  box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.2);
-  font-weight: bold;
-  font-size: 16px;
-  border: 0;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  cursor: pointer;
+
+.Btn2,
+.Btn3 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .btn {
+    margin: 0 10px; // Ajoute un espace entre les boutons
+  }
 }
-.button-80 {
-  color: #fff;
-  padding: 15px 25px;
-  border-radius: 100px;
-  background-color: #9f1254;
-  background-image: radial-gradient(
-      93% 87% at 87% 89%,
-      rgba(0, 0, 0, 0.23) 0%,
-      transparent 86.18%
-    ),
-    radial-gradient(
-      66% 87% at 26% 20%,
-      rgba(255, 255, 255, 0.41) 0%,
-      rgba(255, 255, 255, 0) 69.79%,
-      rgba(255, 255, 255, 0) 100%
-    );
-  box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.2);
-  font-weight: bold;
-  font-size: 16px;
-  border: 0;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  cursor: pointer;
+
+.Btn2 {
+  margin-top: 585px;
 }
-.boutons {
+
+.title {
   text-align: center;
-  margin-top: 35%;
+  color: white;
 }
