@@ -17,6 +17,8 @@
     <%= render "shared/flashes" %>
 
     <%= yield %>
-    <%= render "shared/navbar" %>
+ <% unless @show_navbar == false %>
+  <%= render 'shared/navbar' %>
+<% end %>
   </body>
 </html>
