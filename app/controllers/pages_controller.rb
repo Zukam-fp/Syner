@@ -17,4 +17,19 @@ class PagesController < ApplicationController
       }
     end
   end
+
+  def map
+    if params[:query].present?
+      @matches = Match.near(params[:query], 10)
+    else
+    @matches = Match.all
+    end
+    @markers = @matches.geocoded.map do |match|
+      {
+        lat: match.latitude,
+        lng: match.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {match: match})
+      }
+    end
+  end
 end
