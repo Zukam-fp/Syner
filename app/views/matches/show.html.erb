@@ -1,38 +1,41 @@
+<div class="arrow-return">
+<%= link_to  image_tag("icons8-u-tourner-à-gauche-80.png"), matches_path %>
+</div>
 <!-- Team 1 -->
-<div class="field">
-  <%= link_to new_match_user_team_path(@match) do %>
-    <div class="card-goalkeeper">
+<div class="field" data-controller="card">
+  <%= link_to new_match_user_team_path(@match), onclick: "return confirm('Are you sure?')" do %>
+    <div class="card-goalkeeper" data-action="click->positions#selectPosition" data-action="click->card#replaceWithImage" data-team=<%= @match.teams.first.id %> data-position="goalkeeper" data-positions-target="role">
       <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png" class="img-position">
     </div>
   <% end %>
-  <%= link_to new_match_user_team_path(@match) do %>
-   <div class="card-players">
+  <%= link_to new_match_user_team_path(@match), onclick: "return confirm('Are you sure?')" do %>
+   <div class="card-players" data-action="click->positions#selectPosition"data-team=<%= @match.teams.first.id %> data-position="defence" data-positions-target="role">
       <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
       <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
     </div>
   <% end %>
-  <%= link_to new_match_user_team_path(@match) do %>
-     <div class="card-players">
+  <%= link_to new_match_user_team_path(@match), onclick: "return confirm('Are you sure?')" do %>
+     <div class="card-players" data-action="click->positions#selectPosition" data-team=<%= @match.teams.first.id %> data-position="attack" data-positions-target="role">
       <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
       <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
     </div>
   <% end %>
 
   <!-- Team 2 -->
-  <%= link_to new_match_user_team_path(@match) do %>
-    <div class="card-players">
+  <%= link_to new_match_user_team_path(@match), onclick: "return confirm('Are you sure?')" do %>
+    <div class="card-players" data-action="click->positions#selectPosition" data-team=<%= @match.teams.first.id %> data-position="attack" data-positions-target="role">
       <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
       <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
     </div>
   <% end %>
-  <%= link_to new_match_user_team_path(@match) do %>
-    <div class="card-players">
+  <%= link_to new_match_user_team_path(@match), onclick: "return confirm('Are you sure?')" do %>
+    <div class="card-players" data-action="click->positions#selectPosition"data-team=<%= @match.teams.first.id %> data-position="defence" data-positions-target="role">
       <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
       <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
     </div>
   <% end %>
-  <%= link_to new_match_user_team_path(@match) do %>
-    <div class="card-goalkeeper">
+  <%= link_to new_match_user_team_path(@match), onclick: "return confirm('Are you sure?')" do %>
+    <div class="card-goalkeeper" data-action="click->positions#selectPosition" data-team=<%= @match.teams.first.id %> data-position="goalkeeper" data-positions-target="role">
       <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png" class="img-position">
     </div>
   <% end %>

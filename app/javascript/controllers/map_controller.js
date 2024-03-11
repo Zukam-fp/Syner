@@ -8,6 +8,33 @@ export default class extends Controller {
     markers: Array
   }
 
+
+
+  connect() {
+    mapboxgl.accessToken = this.apiKeyValue
+
+    this.map = new mapboxgl.Map({
+      container: this.element,
+      style: "mapbox://styles/mapbox/streets-v10"
+    })
+
+    this.#addMarkersToMap()
+    this.#fitMapToMarkers()
+
+    this.map.on('click', (event) => {
+      const features = this.map.queryRenderedFeatures(event.point, { layers: ['markers'] });
+      if (features.length) {
+        this.onMarkerClick(features[0].properties);
+      }
+    });
+  }
+
+  onMarkerClick(marker) {
+    // Redirect the user to the index page
+    window.location.href = "/matches";
+  }
+
+
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window_html) // Add this
