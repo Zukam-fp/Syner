@@ -17,6 +17,18 @@ export default class extends Controller {
 
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+
+    this.map.on('click', (event) => {
+      const features = this.map.queryRenderedFeatures(event.point, { layers: ['markers'] });
+      if (features.length) {
+        this.onMarkerClick(features[0].properties);
+      }
+    });
+  }
+
+  onMarkerClick(marker) {
+    // Redirect the user to the index page
+    window.location.href = "/matches";
   }
 
   #addMarkersToMap() {
