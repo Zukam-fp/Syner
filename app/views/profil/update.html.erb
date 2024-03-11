@@ -1,2 +1,7 @@
 <h1>Profil#update</h1>
 <p>Find me in app/views/profil/update.html.erb</p>
+<%= simple_form_for(article) do |f| %>
+  <!-- [...] -->
+  <%= f.input :photo, as: :file %>
+  <!-- [...] -->
+<% end %>

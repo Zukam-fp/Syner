@@ -3,6 +3,7 @@
   <div class="arrow-return">
     <%= link_to image_tag("icons8-u-tourner-à-gauche-80.png"), root_path %>
   </div>
+
   <div class="title-style">
     <h1>All Rooms :</h1>
   </div>
@@ -10,6 +11,11 @@
     <div class="card-matches">
       <div class="div">
           <div class="img-top">
+            <% if match.user.photo.attached? %>
+            <%= cl_image_tag match.user.photo.key, class: "image-prof"%>
+            <% else %>
+            <%= image_tag "téléchargé.jpg", class: "image-prof" %>
+            <% end %>
           </div>
           <div class="img-bot">
             <div class="pi">

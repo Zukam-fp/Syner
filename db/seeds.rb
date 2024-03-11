@@ -8,6 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 require 'faker'
+require "open-uri"
 
 puts "cleaning database"
 # Nettoyer la base de données
@@ -17,13 +18,24 @@ Match.destroy_all
 ChatRoom.destroy_all
 User.destroy_all
 
-
+file = URI.open("https://avatars.githubusercontent.com/u/156045406?v=4")
+file2 = URI.open("https://avatars.githubusercontent.com/u/156658892?v=4")
+file3 = URI.open("https://avatars.githubusercontent.com/u/156658468?v=4")
+file4 = URI.open("https://avatars.githubusercontent.com/u/143911990?v=4")
 puts "generate user"
 # Générer des données pour la table User
-User.create!(first_name: "ShadowS", last_name: "Dilombre", address: "rue de l'ombre", email: "dilombre@gmail.com", password: "lombre")
-User.create!(first_name: "Zukam", last_name: "Zylla", address: "rue du Z", email: "zukam@gmail.com", password: "zukamm")
-User.create!(first_name: "Marius", last_name: "le M", address: "rue du M", email: "marius@gmail.com", password: "mariuss")
-User.create!(first_name: "Oscar", last_name: "Oscaro", address: "rue du O", email: "oscar@gmail.com", password: "oscarr")
+user = User.create!(first_name: "ShadowS", last_name: "Dilombre", address: "rue de l'ombre", email: "dilombre@gmail.com", password: "lombre")
+user.photo.attach(io: file, filename: "le_s", content_type: "image/jpg")
+user.save
+user2 = User.create!(first_name: "Zukam", last_name: "Zylla", address: "rue du Z", email: "zukam@gmail.com", password: "zukamm")
+user2.photo.attach(io: file2, filename: "le_z", content_type: "image/jpg")
+user2.save
+user3 = User.create!(first_name: "Marius", last_name: "le M", address: "rue du M", email: "marius@gmail.com", password: "mariuss")
+user3.photo.attach(io: file3, filename: "c'est_moi", content_type: "image/jpg")
+user3.save
+user4 = User.create!(first_name: "Oscar", last_name: "Oscaro", address: "rue du O", email: "oscar@gmail.com", password: "oscarr")
+user4.photo.attach(io: file4, filename: "oscram", content_type: "image/jpg")
+user4.save
 puts "user created"
 
 puts "generate faker user"
