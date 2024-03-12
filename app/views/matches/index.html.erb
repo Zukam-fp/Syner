@@ -5,9 +5,11 @@
   </div>
 
   <div class="title-style">
-    <h1>All Rooms :</h1>
+    <h1>All Rooms </h1>
+    <hr>
   </div>
   <% Match.all.each do |match| %>
+    <%= link_to match_path(match) do %>
     <div class="card-matches">
       <div class="div">
           <div class="img-top">
@@ -24,12 +26,20 @@
           </div>
       </div>
       <div class="notes">
+         <p>
+          <i class="fa-solid fa-calendar-days"></i> :
           <%= match.date %>
-      </div>
-      <div class="note">
-        <p><%= match.number_of_places %>/10</p>
-        <%= link_to raw('<button type="button" class="btn btn-primary">See details</button>'), match_path(match), class:"su" %>
-      </div>
+        </p>
+        <p>
+          <i class="fa-solid fa-location-dot"></i> :
+          <%= match.address %>
+        </p>
+        <p>
+          <i class="fa-solid fa-users"></i> :
+          <%= match.number_of_places%>/10
+        </p>
+       </div>
     </div>
+    <% end %>
   <% end %>
 </div>
