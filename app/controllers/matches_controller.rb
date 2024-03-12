@@ -2,7 +2,7 @@ class MatchesController < ApplicationController
   before_action :set_navbar_visibility
   def show
     @match = Match.find(params[:id])
-    @user_team = UserTeam.new
+    @user_team = UserTeam.joins(:team).where(teams: { match_id: @match.id }, user_id: current_user.id).first || UserTeam.new
 
     sort_by_places
   end
