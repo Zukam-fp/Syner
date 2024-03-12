@@ -1,0 +1,78 @@
+<div class="container" >
+  <br>
+   <%= simple_form_for [@user_team, @rating], data: {rating_target: "form"} do |f| %>
+  <h1 class="title">Rate Your Mate !</h1>
+  <div class="div17">
+    <div class="img-top17"></div>
+    <div class="img-bot17">
+      <h2><%= current_user.first_name %></h2>
+      <div class="ratings-container" >
+
+        <div class="rating" data-controller="rating" >
+          <div class="label">T-W</div>
+          <div class="stars">
+            <i class="far fa-star" data-action="click->rating#rating" data-index=1 data-rating-target="star"></i>
+            <i class="far fa-star" data-action="click->rating#rating" data-index=2 data-rating-target="star"></i>
+            <i class="far fa-star" data-action="click->rating#rating" data-index=3 data-rating-target="star"></i>
+            <i class="far fa-star" data-action="click->rating#rating" data-index=4 data-rating-target="star"></i>
+            <i class="far fa-star" data-action="click->rating#rating" data-index=5 data-rating-target="star"></i>
+          </div>
+          <%= f.input :team_work, as: :hidden, input_html: { data: {rating_target: "input"} } %>
+        </div>
+
+        <div class="rating" data-controller="rating" >
+          <div class="label">Sho</div>
+          <div class="stars">
+            <i class="far fa-star" data-action="click->rating#rating" data-index=1 data-rating-target="star"></i>
+            <i class="far fa-star" data-action="click->rating#rating" data-index=2 data-rating-target="star"></i>
+            <i class="far fa-star" data-action="click->rating#rating" data-index=3 data-rating-target="star"></i>
+            <i class="far fa-star" data-action="click->rating#rating" data-index=4 data-rating-target="star"></i>
+            <i class="far fa-star" data-action="click->rating#rating" data-index=5 data-rating-target="star"></i>
+          </div>
+          <%= f.input :shoot, as: :hidden, input_html: { data: {rating_target: "input"} } %>
+        </div>
+        <div class="rating" data-controller="rating" >
+          <div class="label">Phy</div>
+          <div class="stars">
+            <i class="far fa-star" data-action="click->rating#rating" data-index=1 data-rating-target="star"></i>
+            <i class="far fa-star" data-action="click->rating#rating" data-index=2 data-rating-target="star"></i>
+            <i class="far fa-star" data-action="click->rating#rating" data-index=3 data-rating-target="star"></i>
+            <i class="far fa-star" data-action="click->rating#rating" data-index=4 data-rating-target="star"></i>
+            <i class="far fa-star" data-action="click->rating#rating" data-index=5 data-rating-target="star"></i>
+          </div>
+          <%= f.input :physic, as: :hidden, input_html: { data: {rating_target: "input"} } %>
+        </div>
+        <div class="rating" data-controller="rating" >
+          <div class="label">Dri</div>
+          <div class="stars">
+            <i class="far fa-star" data-action="click->rating#rating" data-index=1 data-rating-target="star"></i>
+            <i class="far fa-star" data-action="click->rating#rating" data-index=2 data-rating-target="star"></i>
+            <i class="far fa-star" data-action="click->rating#rating" data-index=3 data-rating-target="star"></i>
+            <i class="far fa-star" data-action="click->rating#rating" data-index=4 data-rating-target="star"></i>
+            <i class="far fa-star" data-action="click->rating#rating" data-index=5 data-rating-target="star"></i>
+          </div>
+          <%= f.input :dribbling, as: :hidden, input_html: { data: {rating_target: "input"} } %>
+        </div>
+        <!-- Ajout de l'affichage de la moyenne -->
+      </div>
+    </div>
+  </div>
+  <div class="Btn2">
+    <%= link_to "Back", "#", class: "btn btn-flat" %>
+    <%= link_to "Next", "#", class: "btn btn-flat" %>
+  </div>
+  <%= f.submit "Confirm" %>
+  <% end %>
+</div>
+
+
+
+
+<%# # faire un formulaire caché
+# récupérer la valeur de star dans le dataset
+# remplir ce formulaire avec la valeur de star
+# submit ce formulaire %>
+<%#
+<div class="average" data-average-target="average">
+          Total : 0
+        </div> %>

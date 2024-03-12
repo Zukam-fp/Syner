@@ -1,4 +1,5 @@
 class UserTeamsController < ApplicationController
+
   def new
     @match = Match.find(params[:match_id])
     @user_team = UserTeam.new
