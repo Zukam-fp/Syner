@@ -102,7 +102,7 @@
               </div>
           <% end %>
   </div>
-<%= console %>
+
   <div class="container-def">
         <%test =  @match.teams.first.user_teams.select {|ut| ut.position =="defence3"}%>
           <% if test.length > 0%>
@@ -160,5 +160,3 @@
     <p>Nombre de places disponibles : <%= @match.number_of_places %></p>
   </div>
 </div>
-
-
