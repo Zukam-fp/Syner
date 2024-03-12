@@ -1,5 +1,6 @@
 <div class="container">
-  <%= link_to raw('<button type="button" class="btn btn-primary">All rooms</button>'), matches_path, class:"bouton"%>
+
+
   <div class="accordion" id="accordionPanelsStayOpenExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
@@ -80,10 +81,16 @@
           <p><%= link_to raw('<button type="button" class="btn btn-primary">See details</button>'), match_path(@match_sort2), class:"su" %></p>
        </div>
       </div>
-
+      <div>
+          <a href="/matches">
+            <button class="button-85" role="button">+</button>
+          </a>
        </div>
      </div>
+
    </div>
+
+
 
 
 
@@ -154,4 +161,3 @@
   data-action="click->map#onMarkerClick">
 </div>
 </div>
-
