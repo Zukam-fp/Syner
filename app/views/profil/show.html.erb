@@ -1,9 +1,14 @@
 
 <div class="container">
 <br>
-<h1 class="title">Profil</h1>
+<h1 class="title-style">Profil</h1>
   <div class="div17">
-   <div class="img-top17">
+    <div class="img-top17">
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, class: "image-profilez"%>
+        <% else %>
+        <%= image_tag "téléchargé.jpg", class: "image-profilez" %>
+      <% end %>
     </div>
      <div class="img-bot17">
     <h2><%= current_user.first_name %></h2>
