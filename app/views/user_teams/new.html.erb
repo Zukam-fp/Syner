@@ -1,44 +1,45 @@
+
 <!-- Team 1 -->
-<div class="field2" data-controller="positions">
+<div class="field2" data-controller="card">
 
-    <div class="card-goalkeeper2" data-action="click->positions#selectPosition" data-team=<%= @match.teams.first.id %> data-position="goalkeeper" data-positions-target="role">
-      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png" class="img-position">
+    <div class="card-goalkeeper2"  style="pointer-events: none;" data-image-src="<%= image_tag("/logo-syner_preview_rev_1.png")%>">
+      <img  data-card-target="image" src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png" class="img-position2">
       <%= render 'form', match: @match, user_team: @user_team %>
     </div>
 
 
-    <div class="card-players2" data-action="click->positions#selectPosition"data-team=<%= @match.teams.first.id %> data-position="defence" data-positions-target="role">
-      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
-      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
+    <div class="card-players2"  style="pointer-events: none;" data-image-src="<%= new_match_user_team_path("/logo-syner_preview_rev_1.png")%>">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position2">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position2">
       <%= render 'form', match: @match, user_team: @user_team %>
     </div>
 
 
-    <div class="card-players2" data-action="click->positions#selectPosition" data-team=<%= @match.teams.first.id %> data-position="attack" data-positions-target="role">
-      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
-      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
+    <div class="card-players2"  style="pointer-events: none;" data-image-src="<%= new_match_user_team_path("/logo-syner_preview_rev_1.png")%>">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position2">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position2">
       <%= render 'form', match: @match, user_team: @user_team %>
     </div>
 
 
     <!-- Team 2 -->
 
-    <div class="card-players2" data-action="click->positions#selectPosition" data-team=<%= @match.teams.last.id %> data-position="attack" data-positions-target="role">
-      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
-      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
+    <div class="card-players2" style="pointer-events: none;" data-image-src="<%= new_match_user_team_path("/logo-syner_preview_rev_1.png")%>">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position2">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position2">
       <%= render 'form', match: @match, user_team: @user_team %>
     </div>
 
 
-    <div class="card-players2" data-action="click->positions#selectPosition" data-team=<%= @match.teams.last.id %> data-position="defence" data-positions-target="role">
-      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
-      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position">
+    <div class="card-players2" style="pointer-events: none;" data-image-src="<%= new_match_user_team_path("/logo-syner_preview_rev_1.png")%>">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position2">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png"  class="img-position2">
       <%= render 'form', match: @match, user_team: @user_team%>
     </div>
 
 
-    <div class="card-goalkeeper2" data-action="click->positions#selectPosition" data-team=<%= @match.teams.last.id %> data-position="goalkeeper" data-positions-target="role">
-      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png" class="img-position">
+    <div class="card-goalkeeper2" style="pointer-events: none;" data-image-src="<%= new_match_user_team_path("/logo-syner_preview_rev_1.png")%>">
+      <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png" class="img-position2">
       <%= render 'form', match: @match, user_team: @user_team%>
     </div>
 

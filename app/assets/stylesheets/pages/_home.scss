@@ -1,1 +1,95 @@
 // Specific CSS for your home-page
+.button-85 {
+  margin-left: 78%;
+  border-radius: 30%;
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "++";
+  background: linear-gradient(45deg, #6a0e58, #b828a0, #b9179e);
+  position: absolute;
+  background-color: #000000;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 30%;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 30%;
+}
+.accordion-button {
+  background-color: #111;
+  height: 50px;
+  margin-top: 6%;
+}
+.accordion-button {
+  /* Augmente l'arrondi des coins */
+  padding: 10px 20px; /* Ajuste l'espacement intérieur pour un look plus moderne */
+
+  color: #333; /* Couleur de texte foncée pour un contraste élevé */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre subtile pour de la profondeur */
+  border: none; /* Supprime la bordure par défaut pour un look plus net */
+  transition: all 0.3s ease; /* Animation douce lors du survol */
+}
+
+.accordion-button:focus {
+  background-color: #000000; /* Couleur de fond au survol */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée au survol */
+  color: white;
+}
+.accordion-header {
+  background-color: #000000;
+}
+.accordion-body {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.accordion-button {
+  background-color: #0f0f0f !important; /* Force la couleur de fond noire */
+  color: white !important; /* Force la couleur de texte blanche */
+}
+.accordion-header {
+  background-color: #000000;
+}
+.accordion-item {
+  background-color: #000000;
+}

@@ -1,12 +1,17 @@
 
 <div class="container">
 <br>
-<h1 class="title">Profil</h1>
+<h1 class="title-style">Profil</h1>
   <div class="div17">
-   <div class="img-top17">
+    <div class="img-top17">
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, class: "image-profilez"%>
+        <% else %>
+        <%= image_tag "téléchargé.jpg", class: "image-profilez" %>
+      <% end %>
     </div>
      <div class="img-bot17">
-    <h2><%= current_user.first_name %></h2>
+    <h2><%= @user.first_name %></h2>
 <div class="ratings-container">
   <div class="rating">
    <div class="label">T-W</div>
@@ -52,9 +57,6 @@
       </div>
        </div>
 <div class="Btn4">
-<%= link_to "Edit", "#", class: "btn btn-flat" %>
-<%= link_to "Delete", "#", class: "btn btn-flat" %></div>
-<div class="Btn5"><%= link_to "Save", "#", class: "btn btn-flat btn5" %></div>
 </div>
 
 

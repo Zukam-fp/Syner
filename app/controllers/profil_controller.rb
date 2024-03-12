@@ -1,5 +1,6 @@
 class ProfilController < ApplicationController
   def show
+    @user = User.find(params[:id])
   end
 
   def edit
@@ -9,5 +10,8 @@ class ProfilController < ApplicationController
   end
 
   def destroy
+  end
+
+  def dashboard
   end
 end
