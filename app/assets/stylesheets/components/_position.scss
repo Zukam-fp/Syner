@@ -11,7 +11,7 @@
 
 .field {
   width: 100%;
-  height: 68vh;
+  height: 71vh;
   background-image: url("terrain_black_2.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -22,11 +22,14 @@
 .card-goalkeeper {
   display: flex;
   justify-content: center;
+  height: 33%;
+
 }
 
 .card-goalkeeper2 {
   display: flex;
   justify-content: center;
+  height: 33%;
 }
 
 .card-players {
@@ -42,24 +45,57 @@
 }
 
 .container-def {
+  height: 33%;
   display: flex;
   justify-content: center;
   justify-content: space-around;
 }
 
 .container-atk {
+  height: 33%;
   display: flex;
   justify-content: center;
   justify-content: space-around;
 }
 
 .team1 {
-  display: grid;
-  row-gap: 20px;
+  height: 50%;
 }
 
 .team2 {
-  display: grid;
-  row-gap: 20px;
-  margin-top: 73px;
+  height: 50%;
+}
+
+.container-team {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.img-position-goalkeeper2 {
+  width: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  height: 70px;
+}
+
+.img-position-goalkeeper2:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.img-position-goalkeeper {
+  width: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  height: 70px;
+}
+
+.img-position-goalkeeper:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.position,
+.positionform,
+.teamform {
+  display: none;
 }

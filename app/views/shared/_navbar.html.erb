@@ -1,4 +1,6 @@
 <div class= "fixed-bottom navbar bas">
+
+
   <%= link_to raw('<i class="fa-regular fa-map"></i>'), map_path, class:"nav-logo left"%>
   <% if current_user  %>
   <%= link_to raw('<i class="fa-regular fa-circle-user"></i>'),dashboard_path , class:"nav-logo left" %>
@@ -11,4 +13,5 @@
 
   <%= link_to raw('<i class="fa-regular fa-message"></i>'), root_path, class:"nav-logo right" %>
   <%= link_to raw('<i class="fa-solid fa-receipt"></i>'), root_path, class:"nav-logo right" %>
+
 </div>

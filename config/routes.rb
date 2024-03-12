@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users
   root to: "pages#home"
   get "/map", to: "pages#map"
@@ -15,12 +14,15 @@ Rails.application.routes.draw do
     resources :ratings, only: [:new, :create]
   end
   resources :matches do
-    resources :user_teams, only: [:create, :new]
+    resources :user_teams, only: [:create, :new, :update]
   end
 
   resources :profil, only: [:show, :edit, :update, :destroy]
 
+
+
   get "/dashboard", to: "profil#dashboard"
+
 
 
   # Defines the root path route ("/")
