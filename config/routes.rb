@@ -10,12 +10,20 @@ Rails.application.routes.draw do
   get "/rating", to: "ratings#show"
 
   get '/vote', to: 'votes#vote'
-
+  resources :user_teams, only: [] do
+    resources :ratings, only: [:new, :create]
+  end
   resources :matches do
     resources :user_teams, only: [:create, :new, :update]
   end
 
   resources :profil, only: [:show, :edit, :update, :destroy]
+
+
+
+  get "/dashboard", to: "profil#dashboard"
+
+
 
   # Defines the root path route ("/")
   # root "posts#index"

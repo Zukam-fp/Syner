@@ -5,10 +5,12 @@
   </div>
 
   <div class="title-style">
-    <h1>All Rooms :</h1>
+    <h1>All Rooms </h1>
+    <hr>
   </div>
   <% Match.all.each do |match| %>
     <div class="card-matches">
+    <%= link_to profil_path(match.user.id) do %>
       <div class="div">
           <div class="img-top">
             <% if match.user.photo.attached? %>
@@ -17,19 +19,29 @@
             <%= image_tag "téléchargé.jpg", class: "image-prof" %>
             <% end %>
           </div>
+          <% end %>
           <div class="img-bot">
             <div class="pi">
               <%= match.user.first_name %>
             </div>
           </div>
       </div>
+      <%= link_to match_path(match) do %>
       <div class="notes">
+         <p>
+          <i class="fa-solid fa-calendar-days"></i> :
           <%= match.date %>
-      </div>
-      <div class="note">
-        <p><%= match.number_of_places %>/10</p>
-        <%= link_to raw('<button type="button" class="btn btn-primary">See details</button>'), match_path(match), class:"su" %>
-      </div>
+        </p>
+        <p>
+          <i class="fa-solid fa-location-dot"></i> :
+          <%= match.address %>
+        </p>
+        <p>
+          <i class="fa-solid fa-users"></i> :
+          <%= match.number_of_places%>/10
+        </p>
+       </div>
     </div>
+    <% end %>
   <% end %>
 </div>

@@ -1,16 +1,18 @@
 <div class="container">
-  <%= link_to raw('<button type="button" class="btn btn-primary">All rooms</button>'), matches_path, class:"bouton"%>
+
+
   <div class="accordion" id="accordionPanelsStayOpenExample">
 <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-        <h3>Room soon complete :</h3>
-      </button>
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+  <h3 class="title-style">Room soon complete :</h3>
+</button>
     </h2>
-    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
       <div class="accordion-body">
          <div class="card-matches">
-      <div class="div">
+         <%= link_to profil_path(@match_sort.user.id) do %>
+          <div class="div">
           <div class="img-top">
           <% if @match_sort.user.photo.attached? %>
             <%= cl_image_tag @match_sort.user.photo.key, class: "image-prof"%>
@@ -18,23 +20,34 @@
             <%= image_tag "téléchargé.jpg", class: "image-prof" %>
             <% end %>
           </div>
+          <% end %>
           <div class="img-bot">
              <div class="pi">
                <%= @match_sort.user.first_name %>
              </div>
            </div>
        </div>
+       <%= link_to match_path(@match_sort) do %>
        <div class="notes">
-           <%= @match_sort.date %>
-       </div>
-       <div class="note">
-         <p><%= @match_sort.number_of_places/10 %></p>
-         <p><%= link_to raw('<button type="button" class="btn btn-primary">See details</button>'), match_path(@match_sort), class:"su" %></p>
+        <p>
+          <i class="fa-solid fa-calendar-days"></i> :
+          <%= @match_sort.date %>
+        </p>
+        <p>
+          <i class="fa-solid fa-location-dot"></i> :
+          <%= @match_sort.address %>
+        </p>
+        <p>
+          <i class="fa-solid fa-users"></i> :
+          <%= @match_sort.number_of_places%>/10
+        </p>
        </div>
      </div>
+      <% end %>
 
      <div class="card-matches">
-      <div class="div">
+       <%= link_to profil_path(@match_sort2.user.id) do %>
+        <div class="div">
           <div class="img-top">
           <% if @match_sort2.user.photo.attached? %>
             <%= cl_image_tag @match_sort2.user.photo.key, class: "image-prof"%>
@@ -42,22 +55,34 @@
             <%= image_tag "téléchargé.jpg", class: "image-prof" %>
             <% end %>
           </div>
+        <% end %>
            <div class="img-bot">
             <div class="pi">
-              <%= @match_sort3.user.first_name %>
+              <%= @match_sort2.user.first_name %>
              </div>
           </div>
       </div>
+      <%= link_to match_path(@match_sort) do %>
       <div class="notes">
-          <%= @match_sort3.date %>
-       </div>
-      <div class="note">
-         <p><%= @match_sort3.number_of_places/10 %></p>
-          <p><%= link_to raw('<button type="button" class="btn btn-primary">See details</button>'), match_path(@match_sort3), class:"su" %></p>
-       </div>
+          <p>
+          <i class="fa-solid fa-calendar-days"></i> :
+          <%= @match_sort2.date %>
+        </p>
+        <p>
+          <i class="fa-solid fa-location-dot"></i> :
+          <%= @match_sort2.address %>
+        </p>
+        <p>
+          <i class="fa-solid fa-users"></i> :
+          <%= @match_sort2.number_of_places%>/10
+        </p>
+      </div>
+      <% end %>
     </div>
 
+
     <div class="card-matches">
+    <%= link_to profil_path(@match_sort3.user.id) do %>
       <div class="div">
           <div class="img-top">
           <% if @match_sort3.user.photo.attached? %>
@@ -66,24 +91,37 @@
             <%= image_tag "téléchargé.jpg", class: "image-prof" %>
             <% end %>
           </div>
+          <% end %>
           <div class="img-bot">
             <div class="pi">
-              <%= @match_sort2.user.first_name %>
+              <%= @match_sort3.user.first_name %>
              </div>
           </div>
       </div>
+      <%= link_to match_path(@match_sort3) do%>
       <div class="notes">
-          <%= @match_sort2.date %>
-       </div>
-       <div class="note">
-        <p><%= @match_sort2.number_of_places/10 %></p>
-          <p><%= link_to raw('<button type="button" class="btn btn-primary">See details</button>'), match_path(@match_sort2), class:"su" %></p>
-       </div>
+         <p>
+          <i class="fa-solid fa-calendar-days"></i> :
+          <%= @match_sort3.date %>
+        </p>
+        <p>
+          <i class="fa-solid fa-location-dot"></i> :
+          <%= @match_sort3.address %>
+        </p>
+        <p>
+          <i class="fa-solid fa-users"></i> :
+          <%= @match_sort3.number_of_places%>/10
+        </p>
+        </div>
       </div>
-
-       </div>
+      <% end %>
+      <button class="button-85" role="button" onclick="window.location.href='/matches';">+</button>
+      </div>
+      </div>
      </div>
    </div>
+
+
 
 
 
@@ -93,7 +131,7 @@
 
   <div id="carouselExample" class="carousel slide feur">
     <div class="title-style H">
-      <h2>Our best players :</h2>
+      <h2 class="title-style">Our best players :</h2>
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -146,8 +184,9 @@
 
 
 <%# ---------------------------map---------------------------- %>
-
-<div style="width: 100%; height: 600px; margin-top: 100px;"
+<h3 class="title-style so">Futsal near you</h3>
+<hr>
+<div style="width: 100%; height: 600px; margin-top: 25px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
