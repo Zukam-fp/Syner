@@ -1,7 +1,7 @@
 <div class= "fixed-bottom navbar bas">
   <%= link_to raw('<i class="fa-regular fa-map"></i>'), map_path, class:"nav-logo left"%>
   <% if current_user  %>
-  <%= link_to raw('<i class="fa-regular fa-circle-user"></i>'),profil_path(current_user) , class:"nav-logo left" %>
+  <%= link_to raw('<i class="fa-regular fa-circle-user"></i>'),dashboard_path , class:"nav-logo left" %>
   <% else %>
   <%= "va mourir" %>
   <% end %>
