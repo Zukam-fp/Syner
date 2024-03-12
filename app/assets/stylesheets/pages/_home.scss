@@ -20,7 +20,7 @@
   content: "++";
   background: linear-gradient(45deg, #6a0e58, #b828a0, #b9179e);
   position: absolute;
-  background-color: #2f2f2f;
+  background-color: #000000;
   top: -2px;
   left: -2px;
   background-size: 400%;
@@ -63,22 +63,22 @@
   margin-top: 6%;
 }
 .accordion-button {
-  border-radius: 20px; /* Augmente l'arrondi des coins */
+  /* Augmente l'arrondi des coins */
   padding: 10px 20px; /* Ajuste l'espacement intérieur pour un look plus moderne */
 
   color: #333; /* Couleur de texte foncée pour un contraste élevé */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile pour de la profondeur */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre subtile pour de la profondeur */
   border: none; /* Supprime la bordure par défaut pour un look plus net */
   transition: all 0.3s ease; /* Animation douce lors du survol */
 }
 
 .accordion-button:focus {
-  background-color: #2f2f2f; /* Couleur de fond au survol */
+  background-color: #000000; /* Couleur de fond au survol */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée au survol */
   color: white;
 }
 .accordion-header {
-  background-color: #2f2f2f;
+  background-color: #000000;
 }
 .accordion-body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -86,4 +86,10 @@
 .accordion-button {
   background-color: black !important; /* Force la couleur de fond noire */
   color: white !important; /* Force la couleur de texte blanche */
+}
+.accordion-header {
+  background-color: #000000;
+}
+.accordion-item {
+  background-color: #000000;
 }
