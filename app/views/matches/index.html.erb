@@ -9,8 +9,8 @@
     <hr>
   </div>
   <% Match.all.each do |match| %>
-    <%= link_to match_path(match) do %>
     <div class="card-matches">
+    <%= link_to profil_path(match.user.id) do %>
       <div class="div">
           <div class="img-top">
             <% if match.user.photo.attached? %>
@@ -19,12 +19,14 @@
             <%= image_tag "téléchargé.jpg", class: "image-prof" %>
             <% end %>
           </div>
+          <% end %>
           <div class="img-bot">
             <div class="pi">
               <%= match.user.first_name %>
             </div>
           </div>
       </div>
+      <%= link_to match_path(match) do %>
       <div class="notes">
          <p>
           <i class="fa-solid fa-calendar-days"></i> :
