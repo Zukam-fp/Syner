@@ -20,6 +20,12 @@ class UserTeamsController < ApplicationController
     end
   end
 
+  def update
+    @user_team = UserTeam.find(params[:id])
+    @user_team.update(user_team_params)
+    redirect_to match_path(@user_team.team.match)
+  end
+
   private
 
   def user_team_params

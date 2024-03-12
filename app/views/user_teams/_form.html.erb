@@ -1,5 +1,6 @@
- <%= simple_form_for [@match, @user_team], html: { class: 'hidden-form', data: { positions_target: 'form' } } do |f| %>
-  <%= f.input :position, as: :hidden, input_html: { value: "value", data: {positions_target: 'positionform' } } %>
-  <%= f.input :team_id, as: :hidden, input_html: { value: "value", data: {positions_target: 'teamform' } } %>
-  <%= f.button :submit, style: 'display: none;' %>
-<% end %>
+
+  <%= simple_form_for [@match, @user_team], html: { class: 'hidden-form', data: { positions_target: 'form' } } do |f| %>
+    <%= f.input :position, as: :hidden, input_html: { value: "value", data: {positions_target: 'positionform' } } %>
+    <%= f.input :team_id, as: :hidden, input_html: { value: "value", data: {positions_target: 'teamform' } } %>
+    <%= f.button :submit, style: 'display: none;' %>
+  <% end %>

@@ -1,18 +1,20 @@
 <div class="arrow-return">
 <%= link_to  image_tag("icons8-u-tourner-à-gauche-80.png"), matches_path %>
 </div>
+
 <!-- Team 1 -->
 
 <div class="field" data-controller="card">
+<div class="container-team">
   <div class="team1">
         <%test =  @match.teams.first.user_teams.select {|ut| ut.position =="goalkeeper"}%>
-          <% if test.length > 0 %>
+          <% if test.length > 0%>
             <div class="card-goalkeeper2" >
               <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
             </div>
           <% else %>
             <div class="card-goalkeeper" data-action="click->positions#selectPosition" data-action="click->card#replaceWithImage" data-team=<%= @match.teams.first.id %> data-position="goalkeeper" data-positions-target="role">
-                <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png" class="img-position">
+                <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png" class="img-position-goalkeeper2">
                 <%= render 'user_teams/form', match: @match, user_team: @user_team %>
             </div>
           <% end %>
@@ -20,7 +22,7 @@
 
   <div class="container-def">
         <%test =  @match.teams.first.user_teams.select {|ut| ut.position =="defence"}%>
-          <% if test.length > 0 %>
+          <% if test.length > 0%>
               <div class="card-players2" >
                 <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
               </div>
@@ -33,7 +35,7 @@
 
 
         <%test =  @match.teams.first.user_teams.select {|ut| ut.position =="defence2"}%>
-          <% if test.length > 0 %>
+          <% if test.length > 0%>
               <div class="card-players2" >
                 <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
               </div>
@@ -47,7 +49,7 @@
 
   <div class="container-atk">
         <%test =  @match.teams.first.user_teams.select {|ut| ut.position =="attack"}%>
-          <% if test.length > 0 %>
+          <% if test.length > 0%>
               <div class="card-players2" >
                 <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
               </div>
@@ -60,7 +62,7 @@
 
 
         <%test =  @match.teams.first.user_teams.select {|ut| ut.position =="attack2"}%>
-          <% if test.length > 0 %>
+          <% if test.length > 0%>
               <div class="card-players2" >
                 <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
               </div>
@@ -76,7 +78,7 @@
 <div class="team2">
   <div class="container-atk">
         <%test =  @match.teams.first.user_teams.select {|ut| ut.position =="attack3"}%>
-          <% if test.length > 0 %>
+          <% if test.length > 0%>
               <div class="card-players2" >
                 <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
               </div>
@@ -89,7 +91,7 @@
 
 
         <%test =  @match.teams.first.user_teams.select {|ut| ut.position =="attack4"}%>
-          <% if test.length > 0 %>
+          <% if test.length > 0%>
               <div class="card-players2" >
                 <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
               </div>
@@ -100,10 +102,10 @@
               </div>
           <% end %>
   </div>
-
+<%= console %>
   <div class="container-def">
         <%test =  @match.teams.first.user_teams.select {|ut| ut.position =="defence3"}%>
-          <% if test.length > 0 %>
+          <% if test.length > 0%>
               <div class="card-players2" >
                 <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
               </div>
@@ -116,7 +118,7 @@
 
 
         <%test =  @match.teams.first.user_teams.select {|ut| ut.position =="defence4"}%>
-          <% if test.length > 0 %>
+          <% if test.length > 0%>
               <div class="card-players2" >
                 <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
               </div>
@@ -131,18 +133,29 @@
 
 
         <%test =  @match.teams.first.user_teams.select {|ut| ut.position =="goalkeeper2"}%>
-          <% if test.length > 0 %>
+          <% if test.length > 0%>
               <div class="card-goalkeeper2" >
                 <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
               </div>
           <% else %>
               <div class="card-goalkeeper" data-action="click->positions#selectPosition" data-action="click->card#replaceWithImage" data-team=<%= @match.teams.first.id %> data-position="goalkeeper2" data-positions-target="role">
-                <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png" class="img-position">
+                <img src="https://www.fifarosters.com/assets/card-creator/Placeholder-SBC-Empty.png" class="img-position-goalkeeper2">
                 <%= render 'user_teams/form', match: @match, user_team: @user_team %>
               </div>
           <% end %>
 
+    </div>
 </div>
+<br/>
 
-
-<div class="card-capitaine">Capitaine</div><br/>
+<div class="box">
+  <div>
+    <p>Adresse : <%= @match.address %></p>
+  </div>
+  <div>
+    <p>Date : <%= @match.date.strftime("%d/%m/%Y") %></p>
+  </div>
+  <div>
+    <p>Nombre de places disponibles : <%= @match.number_of_places %></p>
+  </div>
+</div>
