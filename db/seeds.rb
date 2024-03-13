@@ -73,29 +73,37 @@ puts "faker team created"
 
 puts "generate user_team"
 # Générer des données pour la table UserTeam
-position = ["goalkeeper", "defender", "middlefielder", "attacker"]
 User.all.each do |user|
   team = teams.sample
   p team
-  UserTeam.create!(team: teams.sample, user_id: user.id, user_position: position.sample)
+  # UserTeam.create!(team: teams.sample, user_id: user.id, user_position: position.sample)
 end
 puts "user_team created"
 
 puts "assign users to teams"
 # Pour chaque match
 Match.all.each do |match|
+
   # Sélectionner 5 utilisateurs pour chaque équipe
-  team_a_users = User.all.sample(5)
-  team_b_users = (User.all - team_a_users).sample(5)
+  team_a_users = User.all.sample(4)
+  team_b_users = (User.all - team_a_users).sample(4)
 
   # Assigner les utilisateurs à l'équipe A
+  positions = ["goalkeeper", "defence", "defence2", "attack", "attack2"]
+
   team_a_users.each do |user|
-    UserTeam.create(user: user, team: match.teams.first)
+    position = positions.sample
+    positions.delete(position)
+    UserTeam.create!(user: user, team: match.teams.first, position: position, user_position: 0)
   end
 
   # Assigner les utilisateurs à l'équipe B
+  positions = ["goalkeeper", "defence3", "defence4", "attac3", "attack4"]
+
   team_b_users.each do |user|
-    UserTeam.create(user: user, team: match.teams.second)
+    position = positions.sample
+    positions.delete(position)
+    UserTeam.create!(user: user, team: match.teams.second, position: position, user_position: 0)
   end
 end
 puts "users to teams assigned"
