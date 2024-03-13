@@ -35,4 +35,18 @@ export default class extends Controller {
     console.log(this.teamworkTarget.value);
     this.formTarget.submit();
   }
+
+  profilRating() {
+    const numberOfStars = currentTarget.dataset.index;
+
+    this.starTargets.forEach((star) => {
+      star.classList.add("far");
+      star.classList.remove("fas");
+    });
+
+    this.starTargets.slice(0, numberOfStars).forEach((star) => {
+      star.classList.remove("far");
+      star.classList.add("fas");
+    });
+  }
 }

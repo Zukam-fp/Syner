@@ -12,6 +12,7 @@ require "open-uri"
 
 puts "cleaning database"
 # Nettoyer la base de données
+Rating.destroy_all
 UserTeam.destroy_all
 Team.destroy_all
 Match.destroy_all

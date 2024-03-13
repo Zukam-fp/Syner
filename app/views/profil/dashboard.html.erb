@@ -1,7 +1,21 @@
 
 <div class="container">
 <br>
-<h1 class="title-style"> Your profil</h1>
+<h1 class="title-style">Profil</h1>
+  <%= current_user.team_work %>
+  <% stars = current_user.team_work.to_i %>
+ <% empty_star = 5 - current_user.team_work.to_i %>
+
+  <%= current_user.shoot %>
+  <% stars_shoot = current_user.shoot.to_i %>
+ <% empty_star_shoot = 5 - current_user.shoot.to_i %>
+
+  <%= current_user.dribbling %>
+  <% stars_drible = current_user.dribbling.to_i %>
+ <% empty_star_drible = 5 - current_user.dribbling.to_i %>
+  <%= current_user.physic %>
+  <% stars_physic = current_user.physic.to_i %>
+ <% empty_star_physic = 5 - current_user.physic.to_i %>
   <div class="div17">
     <div class="img-top17">
       <% if current_user.photo.attached? %>
@@ -13,53 +27,55 @@
      <div class="img-bot17">
     <h2><%= current_user.first_name %></h2>
 <div class="ratings-container">
-  <div class="rating">
+  <div class="profilRating"  >
    <div class="label">T-W</div>
-    <div class="stars" data-rating="0">
+
+    <div class="stars">
+    <% current_user.team_work.to_i.times do %>
       <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
+      <% end %>
+      <% empty_star.times do %>
+      <i class="far fa-star"></i>
+      <% end %>
     </div>
   </div>
-  <div class="rating">
+  <div class="profilRating">
     <div class="label">Sho</div>
-    <div class="stars" data-rating="1">
+    <div class="stars">
+    <% stars_shoot.times do %>
       <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
+      <% end %>
+      <% empty_star_shoot.times do %>
+      <i class="far fa-star"></i>
+      <% end %>
     </div>
   </div>
-  <div class="rating">
+  <div class="profilRating">
     <div class="label">Phy</div>
-    <div class="stars" data-rating="2">
+    <div class="stars">
+       <% stars_physic.times do %>
       <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
+      <% end %>
+      <% empty_star_physic.times do %>
+      <i class="far fa-star"></i>
+      <% end %>
     </div>
   </div>
-  <div class="rating">
+  <div class="proilRating">
     <div class="label">Dri</div>
-    <div class="stars" data-rating="3">
+    <div class="stars">
+   <% stars_drible.times do %>
       <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
+      <% end %>
+      <% empty_star_drible.times do %>
+      <i class="far fa-star"></i>
+      <% end %>
     </div>
   </div>
 </div>
       </div>
        </div>
 <div class="Btn4">
-<%= link_to "Edit", "#", class: "btn btn-flat" %>
-<%= link_to "Delete", "#", class: "btn btn-flat" %></div>
-<div class="Btn5"><%= link_to "Save", "#", class: "btn btn-flat btn5" %></div>
 </div>
 
 

@@ -5,7 +5,7 @@
   <div class="div17">
     <div class="img-top17"></div>
     <div class="img-bot17">
-      <h2><%= current_user.first_name %></h2>
+      <h2><%= @user_team.user.first_name %></h2>
       <div class="ratings-container" >
 
         <div class="rating" data-controller="rating" >
@@ -64,6 +64,8 @@
   <%= f.submit "Confirm" %>
   <% end %>
 </div>
+
+<%= console %>
 
 
 
