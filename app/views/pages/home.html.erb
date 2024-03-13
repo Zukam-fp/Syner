@@ -1,14 +1,7 @@
 <div class="container monstre">
 
+<h3 class="title-style1">Room soon complete <%= image_tag("foot-roma-removebg-preview.png", alt: "logo foot", class: "logo-foot") %></h3>
 
-  <div class="accordion" id="accordionPanelsStayOpenExample">
-<div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
-  <h3 class="title-style">Room soon complete :</h3>
-</button>
-    </h2>
-    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
       <div class="accordion-body">
          <div class="card-matches">
          <%= link_to profil_path(@match_sort.user.id) do %>
@@ -115,7 +108,7 @@
         </div>
       </div>
       <% end %>
-      <button class="button-85" role="button" onclick="window.location.href='/matches';">+</button>
+      <button class="button-85" role="button" onclick="window.location.href='/matches';">All rooms !</button>
       </div>
       </div>
      </div>

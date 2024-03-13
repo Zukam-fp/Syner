@@ -10,8 +10,11 @@ Rails.application.routes.draw do
   get "/rating", to: "ratings#show"
 
   get '/vote', to: 'votes#vote'
+  resources :teams, only: [] do
+    resources :ratings, only: [:new]
+  end
   resources :user_teams, only: [] do
-    resources :ratings, only: [:new, :create]
+    resources :ratings, only: [:create]
   end
   resources :matches do
     resources :user_teams, only: [:create, :new, :update]

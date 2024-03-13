@@ -20,4 +20,12 @@ class Match < ApplicationRecord
   #   address: "Rue Pierre Mauroy,Lille",
   #   address: "82 Rue du Molinel, 59000 Lille";
   # }]
+
+
+
 end
+
+
+
+
+
