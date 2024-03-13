@@ -1,16 +1,9 @@
-<%= simple_form_for @match do |f| %>
-  <%= f.input :position, collection: ["goalkeeper", "defence", "attack"]%>
+<%# <%= simple_form_for @match do |f| %>
+  <%# <%= f.input :position, collection: ["goalkeeper", "defence", "attack"]%>
 
-  <%= f.input :team, collection: ['Team A', 'Team B'], prompt: 'Select a Team' %>
+  <%# <%= f.input :team, collection: ['Team A', 'Team B'], prompt: 'Select a Team' %>
 
-  <%= f.input :futsal, collection: Match::ADDRESSES, prompt: 'Select a Futsal' %>
+  <%# <%= f.input :futsal, collection: Match::ADDRESSES, prompt: 'Select a Futsal' %>
 
-  <%= f.button :submit %>
-<% end %>
-
-
-<%= simple_form_for [@match], html: { class: 'hidden-form', data: { positions_target: 'form' } } do |f| %>
-    <%= f.input :position, as: :hidden, input_html: { value: "value", data: {positions_target: 'positionform' } } %>
-    <%= f.input :team_id, as: :hidden, input_html: { value: "value", data: {positions_target: 'teamform' } } %>
-    <%= f.button :submit, style: 'display: none;' %>
-  <% end %>
+  <%# <%= f.button :submit %>
+<%# <% end %>
