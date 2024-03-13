@@ -1,5 +1,20 @@
 class MatchesController < ApplicationController
   before_action :set_navbar_visibility
+
+  def new
+    @match = Match.new
+  end
+
+  def create
+    @match = Match.new(match_params)
+    @match.user = current_user
+    if @match.save
+      redirect_to match_path(@match)
+    else
+      render :new
+    end
+  end
+
   def show
     @match = Match.find(params[:id])
     @user_team = UserTeam.joins(:team).where(teams: { match_id: @match.id }, user_id: current_user.id).first || UserTeam.new
@@ -10,8 +25,6 @@ class MatchesController < ApplicationController
   def sort_by_places
     @match_sort = Match.all.sort_by{ |m| m.number_of_places >= 9 }.first
   end
-
-
 
   def set_navbar_visibility
     @show_navbar = action_name != 'show'

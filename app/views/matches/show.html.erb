@@ -1,7 +1,10 @@
+<div class="card-top">
 <div class="arrow-return">
-<%= link_to  image_tag("icons8-u-tourner-à-gauche-80.png"), matches_path %>
+  <%= link_to  image_tag("icons8-u-tourner-à-gauche-80.png"), matches_path %>
 </div>
 
+<div class="join-match"><h2>Join match</h2></div>
+</div>
 <!-- Team 1 -->
 
 <div class="field" data-controller="card">
@@ -151,12 +154,31 @@
 
 <div class="box">
   <div>
-    <p>Adresse : <%= @match.address %></p>
+    <p> Captain : <%= @match.user.first_name %></p>
+  </div>
+  <br>
+  <div class="table-team">
+  <% @match.teams.each do |team| %>
+    <div data-positions-target="players">Team <%= team.name %>
+      <% team.user_teams.each do |user_team|%>
+        <div data-target="card.role" data-role-value="<%= user_team.position %>">
+          <%= user_team.team.name %>
+
+          <%= user_team.user.first_name %>
+        </div>
+        <%  end %>
+      </div>
+    <% end %>
+  </div>
+  <br>
+  <br>
+  <div>
+    <p>Address : <%= @match.address %></p>
   </div>
   <div>
     <p>Date : <%= @match.date.strftime("%d/%m/%Y") %></p>
   </div>
   <div>
-    <p>Nombre de places disponibles : <%= @match.number_of_places %></p>
+    <p>Number of places : <%= @match.number_of_places %></p>
   </div>
 </div>

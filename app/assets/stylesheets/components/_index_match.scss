@@ -4,6 +4,14 @@
   margin-top: 10px;
   font-family: Rajdhani;
 }
+
+.title-style2{
+  color: white;
+  text-align: center;
+  font-family: Rajdhani;
+  margin-left: 71px;
+}
+
 .card-matches {
   color: white;
   background: linear-gradient(#BF02EE, #7F00AB);
@@ -27,4 +35,10 @@
 }
 .su {
   margin-right: 50px;
+}
+
+.container-top {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 37px;
 }
