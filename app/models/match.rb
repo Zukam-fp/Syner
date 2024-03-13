@@ -1,5 +1,6 @@
 class Match < ApplicationRecord
   has_many :teams
+  has_many :user_teams, through: :teams
   belongs_to :chat_room
   belongs_to :user
   geocoded_by :address
@@ -21,11 +22,7 @@ class Match < ApplicationRecord
   #   address: "82 Rue du Molinel, 59000 Lille";
   # }]
 
-
-
+  def count_players
+    user_teams.count
+  end
 end
-
-
-
-
-

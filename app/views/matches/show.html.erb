@@ -162,9 +162,10 @@
     <div data-positions-target="players">Team <%= team.name %>
       <% team.user_teams.each do |user_team|%>
         <div data-target="card.role" data-role-value="<%= user_team.position %>">
-          <%= user_team.team.name %>
+
 
           <%= user_team.user.first_name %>
+          <%= user_team.position %>
         </div>
         <%  end %>
       </div>
@@ -182,3 +183,4 @@
     <p>Number of places : <%= @match.number_of_places %></p>
   </div>
 </div>
+<%= console %>
