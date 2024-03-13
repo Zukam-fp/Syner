@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 .button-85 {
-  margin-left: 78%;
-  border-radius: 30%;
+  margin-left: 60%;
+  border-radius: 50%; /* Increase the border-radius */
   padding: 0.6em 2em;
   border: none;
   outline: none;
@@ -10,14 +10,14 @@
   cursor: pointer;
   position: relative;
   z-index: 0;
-
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  width: 35%;
 }
 
 .button-85:before {
-  content: "++";
+  content: "";
   background: linear-gradient(45deg, #6a0e58, #b828a0, #b9179e);
   position: absolute;
   background-color: #000000;
@@ -27,7 +27,7 @@
   z-index: -1;
   filter: blur(5px);
   -webkit-filter: blur(5px);
-  width: calc(100% + 4px);
+  width: 100%;
   height: calc(100% + 4px);
   animation: glowing-button-85 20s linear infinite;
   transition: opacity 0.3s ease-in-out;
@@ -92,4 +92,12 @@
 }
 .accordion-item {
   background-color: #000000;
+}
+.title-style1 {
+  margin-top: 7%;
+  text-align: center;
+  color: white;
+}
+.logo-foot {
+  height: 50px;
 }
