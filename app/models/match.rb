@@ -7,4 +7,12 @@ class Match < ApplicationRecord
   validates :number_of_places, presence: true
   validates :address, presence: true
   validates :date, presence: true
+
+
+  ADRESSES = []
 end
+
+
+
+
+Match::ADRESSES
