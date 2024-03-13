@@ -16,7 +16,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  margin-top: 58px;
+  margin-top: 10px;;
 }
 
 .card-goalkeeper {
@@ -98,4 +98,30 @@
 .positionform,
 .teamform {
   display: none;
+}
+
+.table-team {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around
+}
+
+.join-match {
+  height: 0px;
+  color: white;
+  padding-right: 29px;
+
+}
+
+.join-match h2 {
+  font-family: 'Rajdhani';
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 47px;
+  margin-right: 105px;
+  padding-bottom: 11px;
+  margin-top: -16px;
 }

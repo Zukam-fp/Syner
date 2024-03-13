@@ -8,7 +8,6 @@ class RatingsController < ApplicationController
   def new
     @rating = Rating.new
     @user_team = UserTeam.find(params[:user_team_id])
-
   end
 
   def create

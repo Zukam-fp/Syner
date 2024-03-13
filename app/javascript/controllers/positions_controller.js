@@ -2,11 +2,9 @@ import { Controller } from "@hotwired/stimulus"
 
 
 export default class extends Controller {
-  static targets = ["form", "position", "role", "team", "teamform", "positionform", "positionTargets", "positionformTargets", "teamformTargets"]
+  static targets = ["form", "position", "role", "team", "teamform", "positionform", "positionTargets", "positionformTargets", "teamformTargets", "players"]
   connect() {
     /* console.log(this.roleTarget.dataset.position); */
-
-    console.log(this.testTarget)
   }
   selectPosition(event) {
     event.preventDefault()
@@ -14,6 +12,7 @@ export default class extends Controller {
 
     const position = event.currentTarget.dataset.position;
     const team = event.currentTarget.dataset.team;
+
 
     this.positionformTargets[0].value = position;
     this.teamformTargets[0].value = team;
