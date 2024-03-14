@@ -3,6 +3,7 @@
   <%= link_to  image_tag("arrow.png"), matches_path %>
 </div>
 
+
 <div class="join-match"><h2>Join match</h2></div>
 </div>
 <!-- Team 1 -->
@@ -182,7 +183,7 @@
 
         <%test =  @match.teams.second.user_teams.select {|ut| ut.position =="defence4"}%>
           <% if test.length > 0%>
-              <div class="card-players2" >
+              <div class="card-players2">
                   <div class="testing1">
 
                   <% if test.first.user.photo.attached? %>
