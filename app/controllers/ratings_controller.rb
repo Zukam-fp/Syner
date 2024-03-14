@@ -8,9 +8,10 @@ class RatingsController < ApplicationController
   def new
     @rating = Rating.new
 
- 
+
     @team = Team.find(params[:team_id])
-    @user_team = @team.user_teams.where.missing(:ratings).first
+    @user_teams =  @team.user_teams.where.not(user_id: current_user.id)
+    @user_team = @user_teams.where.missing(:ratings).first
     if @user_team.nil?
       redirect_to match_path(@team.match)
     end
