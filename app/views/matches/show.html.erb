@@ -184,11 +184,16 @@
     <i class="fa-regular fa-calendar" style="color: #5356FF;"></i>
     <p><%= @match.date.strftime("%d/%m/%Y") %></p>
   </div>
+
   <div class="info-item">
     <i class="fa-solid fa-users" style="color: #5356FF;"></i>
     <p><%= @match.number_of_places %></p>
   </div>
 </div>
-
 </div>
 <%= console %>
+  <div>
+    <p>Number of places : <%= @match.user_teams.count %></p>
+  </div>
+</div>
+
