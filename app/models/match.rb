@@ -9,20 +9,23 @@ class Match < ApplicationRecord
   validates :address, presence: true
   validates :date, presence: true
 
-  # ADDRESSES = [{
-  #   name: "Le Balloon", address: "100 Av. Willy Brandt, Lille",
-  #   name: "", address: "2 Av. des Saules, 59160 Lille",
-  #   address: " 40 Rue de Béthune, 59800 Lille",
-  #   address: "jean baptiste lebas, Lille",
-  #   address: "rue de paris, Lille",
-  #   address: "rue nationale, Lille",
-  #   address: "rue gambetta, Lille",
-  #   address: "rue des postes, Lille",
-  #   address: "Rue Pierre Mauroy,Lille",
-  #   address: "82 Rue du Molinel, 59000 Lille";
-  # }]
+  POSITIONS = ["goalkeeper", "defender", "attack"]
+
+
+  TEAMS = ['Team A', 'Team B']
+
+  ADDRESSES = [
+
+    {name: "Soccer Sal", address: "100 Av. Willy Brandt, Lille"},
+    {name: "Foot play", address: "2 Av. des Saules, 59160 Lille"},
+    {name: "Stade de Picot", address: "40 Rue de Béthune, 59800 Lille"},
+    {name: "Stade Pierre Mauroy", address: "Rue Pierre Mauroy,Lille"},
+    {name: "Stade du Hainaut", address: "Avenue des Sports, 59300 Valenciennes"},
+    {name: "Stade Bollaert-Delelis", address: "Avenue Alfred Maes, 62300 Lens"},
+  ]
 
   def count_players
     user_teams.count
   end
+
 end
