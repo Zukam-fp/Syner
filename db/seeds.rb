@@ -39,6 +39,8 @@ user4.photo.attach(io: file4, filename: "oscram", content_type: "image/jpg")
 user4.save
 puts "user created"
 
+
+
 puts "generate faker user"
 10.times do
   User.create!(
@@ -55,6 +57,13 @@ puts "generate matches and teams"
 
 adresses = ["100 Av. Willy Brandt, Lille", "2 Av. des Saules, 59160 Lille", " 40 Rue de Béthune, 59800 Lille", "jean baptiste lebas, Lille", "rue de paris, Lille", "rue nationale, Lille", "rue gambetta, Lille", "rue des postes, Lille", "Rue Pierre Mauroy,Lille", "82 Rue du Molinel, 59000 Lille","17 Rue du Molinel, 59000 Lille","16 Rue du Molinel, 59000 Lille","15 Rue du Molinel, 59000 Lille","14 Rue du Molinel, 59000 Lille","13 Rue du Molinel, 59000 Lille","12 Rue du Molinel, 59000 Lille"]
 # Pour chaque utilisateur
+
+
+match_1 = Match.create!(user: user2, chat_room: ChatRoom.create!, number_of_places: 10, address: adresses.sample, date: Date.today - 1)
+
+team_1 = Team.create!(match: match_1, name:"A")
+        Team.create!(match: match_1, name:"B")
+userteam = UserTeam.create!(user: user2, team: team_1, position: "goalkeeper", user_position: 0)
 User.all.each_with_index do |user, index|
 
   # Enregistrer l'utilisateur
