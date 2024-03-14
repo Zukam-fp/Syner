@@ -180,7 +180,6 @@
     <p>Date : <%= @match.date.strftime("%d/%m/%Y") %></p>
   </div>
   <div>
-    <p>Number of places : <%= @match.number_of_places %></p>
+    <p>Number of places : <%= @match.user_teams.count %></p>
   </div>
 </div>
-<%= console %>
