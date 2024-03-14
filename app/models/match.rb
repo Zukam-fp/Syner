@@ -16,16 +16,15 @@ class Match < ApplicationRecord
 
   ADDRESSES = [
 
-    {name: "Soccer Sal", address: "100 Av. Willy Brandt, Lille"},
-    {name: "Foot play", address: "2 Av. des Saules, 59160 Lille"},
-    {name: "Stade de Picot", address: "40 Rue de Béthune, 59800 Lille"},
-    {name: "Stade Pierre Mauroy", address: "Rue Pierre Mauroy,Lille"},
-    {name: "Stade du Hainaut", address: "Avenue des Sports, 59300 Valenciennes"},
-    {name: "Stade Bollaert-Delelis", address: "Avenue Alfred Maes, 62300 Lens"},
+    { name: "Soccer Sal", address: "100 Av. Willy Brandt, Lille" },
+    { name: "Foot play", address: "2 Av. des Saules, 59160 Lille" },
+    { name: "Shoot them all", address: "40 Rue de Béthune, 59800 Lille" },
+    { name: "Chaos arena", address: "jean baptiste lebas, Lille" },
+    { name: "Velocity kick stadium", address: "rue de paris, Lille" },
+    { name: "Infinity futsal coliseum", address: "rue des postes, Lille" }
   ]
 
   def count_players
     user_teams.count
   end
-
 end

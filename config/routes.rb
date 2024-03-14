@@ -22,11 +22,7 @@ Rails.application.routes.draw do
 
   resources :profil, only: [:show, :edit, :update, :destroy]
 
-
-
   get "/dashboard", to: "profil#dashboard"
-
-
 
   # Defines the root path route ("/")
   # root "posts#index"
