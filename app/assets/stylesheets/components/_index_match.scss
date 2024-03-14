@@ -5,7 +5,7 @@
   font-family: Rajdhani;
 }
 
-.title-style2{
+.title-style2 {
   color: white;
   text-align: center;
   font-family: Rajdhani;
@@ -14,14 +14,14 @@
 
 .card-matches {
   color: white;
-  background: linear-gradient(#BF02EE, #7F00AB);
+  background: linear-gradient(#8f35a6, #3f0154);
   padding: 8px;
   border-radius: 8px;
   display: flex;
   height: 150px;
   margin-bottom: 32px;
   gap: 20px;
-  box-shadow: 1px 1px white;
+  box-shadow: 2px 3px #73727257;
 }
 
 .pi {
@@ -30,8 +30,8 @@
 }
 .biz {
   height: 90vh;
-    overflow: hidden;
-    overflow-y: scroll;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 .su {
   margin-right: 50px;
@@ -41,4 +41,16 @@
   display: flex;
   justify-content: flex-start;
   margin-top: 37px;
+}
+
+.fa-calendar-days {
+  color: #23b8b0;
+}
+
+.fa-location-dot {
+  color: chocolate;
+}
+
+.fa-users {
+  color: #c8c1c1;
 }
