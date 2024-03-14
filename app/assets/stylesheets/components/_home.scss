@@ -25,7 +25,6 @@
   height: 80px;
   width: 100px;
   background-repeat: no-repeat;
-
 }
 .img-bot10 {
   background-image: url("bas.png");
@@ -59,5 +58,10 @@
 }
 
 .accordion {
-  border-color:#2f2f2f !important;
+  border-color: #2f2f2f !important;
+}
+.title-style {
+  img {
+    height: 35px;
+  }
 }

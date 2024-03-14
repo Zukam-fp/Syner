@@ -1,4 +1,46 @@
+.avatar-match {
+  height: 40%;
+  top: 35px;
+  /* width: 10%; */
+  margin-top: 11px;
+}
 
+.testing {
+  background-image: asset-url("logo.png");
+  width: 16vw;
+  background-size: cover;
+  /* padding: 0px; */
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+}
+.testing1 {
+  background-image: asset-url("logo.png");
+  width: 13vw;
+  background-size: cover;
+  /* padding: 0px; */
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+}
+// .seum {
+//   top: 219px
+//   // width: 32%;
+// }
+
+
+// .seum1 {
+//   top: 320px;
+// }
+// .seum2 {
+//   top: 420px;
+// }
+// .seum3 {
+//   top: 520px;
+// }
+// .seum4 {
+//   top: 596x;
+// }
 .img-card img {
   width: 50px !important;
   height: 70px !important;

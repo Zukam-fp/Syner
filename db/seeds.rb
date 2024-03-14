@@ -56,55 +56,51 @@ puts "generate matches and teams"
 adresses = ["100 Av. Willy Brandt, Lille", "2 Av. des Saules, 59160 Lille", " 40 Rue de Béthune, 59800 Lille", "jean baptiste lebas, Lille", "rue de paris, Lille", "rue nationale, Lille", "rue gambetta, Lille", "rue des postes, Lille", "Rue Pierre Mauroy,Lille", "82 Rue du Molinel, 59000 Lille","17 Rue du Molinel, 59000 Lille","16 Rue du Molinel, 59000 Lille","15 Rue du Molinel, 59000 Lille","14 Rue du Molinel, 59000 Lille","13 Rue du Molinel, 59000 Lille","12 Rue du Molinel, 59000 Lille"]
 # Pour chaque utilisateur
 User.all.each_with_index do |user, index|
-  p user
+
   # Enregistrer l'utilisateur
   chatroom = ChatRoom.create!
   # Créer un match
-  p match = Match.create!(user: user, chat_room: chatroom, number_of_places: 10, address: adresses[index], date: Date.today + 1.day)
-  p user
+   match = Match.create!(user: user, chat_room: chatroom, number_of_places: 10, address: adresses[index], date: Date.today + 1.day)
+
   # Créer 2 équipes
-    Team.create!(match: match, name: "A")
+   team1 = Team.create!(match: match, name: "A")
     Team.create!(match: match, name: "B")
+
+
+    UserTeam.create(user: user, team: team1, position: "goalkeeper", user_position: 0)
 end
+
 puts "matches and teams created"
 
 puts "generate faker team"
 teams = Match.all.map(&:teams).flatten
-puts "faker team created"
-
-puts "generate user_team"
-# Générer des données pour la table UserTeam
-User.all.each do |user|
-  team = teams.sample
-  p team
-  # UserTeam.create!(team: teams.sample, user_id: user.id, user_position: position.sample)
-end
-puts "user_team created"
 
 puts "assign users to teams"
 # Pour chaque match
 Match.all.each do |match|
-
+  p match.user
   # Sélectionner 5 utilisateurs pour chaque équipe
-  team_a_users = User.all.sample(4)
-  team_b_users = (User.all - team_a_users).sample(4)
+  team_a_users = (User.all - [match.user]).sample(rand(0..3))
+  team_b_users = (User.all - team_a_users - [match.user]).sample(rand(0..4))
 
   # Assigner les utilisateurs à l'équipe A
-  positions = ["goalkeeper", "defence", "defence2", "attack", "attack2"]
+  positions = ["defence", "defence2", "attack", "attack2"]
 
   team_a_users.each do |user|
     position = positions.sample
     positions.delete(position)
-    UserTeam.create!(user: user, team: match.teams.first, position: position, user_position: 0)
+    UserTeam.create(user: user, team: match.teams.first, position: position, user_position: 0)
   end
 
   # Assigner les utilisateurs à l'équipe B
-  positions = ["goalkeeper", "defence3", "defence4", "attac3", "attack4"]
+  positions = ["goalkeeper2", "defence3", "defence4", "attack3", "attack4"]
 
   team_b_users.each do |user|
     position = positions.sample
     positions.delete(position)
-    UserTeam.create!(user: user, team: match.teams.second, position: position, user_position: 0)
+    UserTeam.create(user: user, team: match.teams.second, position: position, user_position: 0)
   end
+
+  match.update(number_of_places: match.count_players)
 end
 puts "users to teams assigned"

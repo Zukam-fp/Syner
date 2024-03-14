@@ -1,5 +1,6 @@
 class Match < ApplicationRecord
   has_many :teams
+  has_many :user_teams, through: :teams
   belongs_to :chat_room
   belongs_to :user
   geocoded_by :address
@@ -9,6 +10,7 @@ class Match < ApplicationRecord
   validates :date, presence: true
 
   POSITIONS = ["goalkeeper", "defender", "attack"]
+
 
   TEAMS = ['Team A', 'Team B']
 
@@ -21,4 +23,9 @@ class Match < ApplicationRecord
     {name: "Stade du Hainaut", address: "Avenue des Sports, 59300 Valenciennes"},
     {name: "Stade Bollaert-Delelis", address: "Avenue Alfred Maes, 62300 Lens"},
   ]
+
+  def count_players
+    user_teams.count
+  end
+
 end
