@@ -250,7 +250,7 @@
     <% end %>
   </div>
   <br>
-  <br>
+
  <div class="match-info">
   <div class="info-item">
     <i class="fa-solid fa-location-dot" style="color: #5356FF;"></i>
@@ -260,16 +260,10 @@
     <i class="fa-regular fa-calendar" style="color: #5356FF;"></i>
     <p><%= @match.date.strftime("%d/%m/%Y") %></p>
   </div>
-
   <div class="info-item">
     <i class="fa-solid fa-users" style="color: #5356FF;"></i>
-    <p><%= @match.number_of_places %></p>
+    <p><%= @match.user_teams.count %>/10</p>
   </div>
 </div>
 </div>
-<%= console %>
-  <div>
-    <p>Number of places : <%= @match.user_teams.count %></p>
-  </div>
 </div>
-
