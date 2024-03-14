@@ -3,15 +3,19 @@
   <%= link_to  image_tag("arrow.png"), matches_path %>
 </div>
 
-  <% if current_user.matches.include?(@match) && Date.today > @match.date  %>
-    <div>
-      <%= link_to  image_tag("candidates.png"), new_team_rating_path(@team) %>
-    </div>
-  <% end %>
+
 <%# && Date.today > @match.date %>
 
 <div class="join-match"><h2>Join match</h2></div>
+
+<% if current_user.matches.include?(@match) && Date.today > @match.date  %>
+    <div class="candidate">
+      <%= link_to  image_tag("candidates.png"), new_team_rating_path(@team) %>
+    </div>
+  <% end %>
+
 </div>
+
 <!-- Team 1 -->
 
 <div class="field" data-controller="card">
