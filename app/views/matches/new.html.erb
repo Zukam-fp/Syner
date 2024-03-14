@@ -1,7 +1,18 @@
+<div class="create-new">
+  <h1>Create your match</h1>
+</div>
+
+<div class="form-new">
+
 <%= simple_form_for @match do |f| %>
   <%= f.input :address, collection: Match::ADDRESSES.map{|address| address[:name]}, prompt: 'Select a Futsal' %>
-  <%= f.input :date, prompt: 'Select a date' %>
+
+
+  <%= f.input :date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
   <%= f.button :submit %>
  <% end %>
+ </div>
 
  <%= console %>
