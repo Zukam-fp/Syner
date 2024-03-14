@@ -26,13 +26,13 @@ class MatchesController < ApplicationController
     end
     @team = Team.create(name: "Team A", match: @match)
     Team.create(name: "Team B", match: @match)
-    UserTeam.create(user: current_user, team: @team, position: "goalkeeper")
+    UserTeam.create(user: current_user, team: @team, position: "goalkeeper", user_position:"0")
   end
 
   def show
     @match = Match.find(params[:id])
     @user_team = UserTeam.joins(:team).where(teams: { match_id: @match.id }, user_id: current_user.id).first || UserTeam.new
-
+    @team = @match.teams.joins(:user_teams).where("user_teams.user_id = #{current_user.id}").first
     sort_by_places
   end
 
