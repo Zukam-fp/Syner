@@ -19,6 +19,7 @@ legend ~ div.form-check:first-of-type {
   color: white;
   margin: 18%;
   font-family: Rajdhani;
+  padding-top: 35px
 }
 
 .create-new {
@@ -28,4 +29,17 @@ legend ~ div.form-check:first-of-type {
   text-align: center;
   margin: 17%;
   color: white;
+}
+
+.btn-primary {
+  background-color: #680082;
+  border-color: #535353;
+  border-radius: 5px;
+}
+
+.box-form {
+  background-color: #535353;
+  height: 34vh;
+  margin: 5%;
+  border-radius: 8px;
 }
