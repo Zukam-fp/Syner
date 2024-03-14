@@ -153,13 +153,15 @@
 
 
 <div class="box">
-  <div>
-    <p> Captain : <%= @match.user.first_name %></p>
-  </div>
+  <div class="capitaine">
+    <p><strong> Captain : <%= @match.user.first_name %> <%= image_tag("capitaine.png") %></strong></p>
+
+</div>
+
   <br>
   <div class="table-team">
   <% @match.teams.each do |team| %>
-    <div data-positions-target="players">Team <%= team.name %>
+    <div data-positions-target="players"><strong>Team <%= team.name %></strong>
       <% team.user_teams.each do |user_team|%>
         <div data-target="card.role" data-role-value="<%= user_team.position %>">
 
@@ -173,13 +175,25 @@
   </div>
   <br>
   <br>
-  <div>
-    <p>Address : <%= @match.address %></p>
+ <div class="match-info">
+  <div class="info-item">
+    <i class="fa-solid fa-location-dot" style="color: #5356FF;"></i>
+    <p><%= @match.address %></p>
   </div>
-  <div>
-    <p>Date : <%= @match.date.strftime("%d/%m/%Y") %></p>
+  <div class="info-item">
+    <i class="fa-regular fa-calendar" style="color: #5356FF;"></i>
+    <p><%= @match.date.strftime("%d/%m/%Y") %></p>
   </div>
+
+  <div class="info-item">
+    <i class="fa-solid fa-users" style="color: #5356FF;"></i>
+    <p><%= @match.number_of_places %></p>
+  </div>
+</div>
+</div>
+<%= console %>
   <div>
     <p>Number of places : <%= @match.user_teams.count %></p>
   </div>
 </div>
+
