@@ -29,6 +29,7 @@ legend ~ div.form-check:first-of-type {
   text-align: center;
   margin: 17%;
   color: white;
+  margin-left: 41px;
 }
 
 .btn-primary {
@@ -42,4 +43,8 @@ legend ~ div.form-check:first-of-type {
   height: 34vh;
   margin: 5%;
   border-radius: 8px;
+}
+
+.container-arrow {
+  display: flex;
 }
