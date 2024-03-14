@@ -126,9 +126,11 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="div10">
+        <%= link_to profil_path(@user1.id) do %>
           <div class="img-top10">
             <%= cl_image_tag @user1.photo.key, class:"image-prof" %>
           </div>
+          <% end %>
           <div class="img-bot10">
             <div class="pi10">
               <%= @user1.first_name %>
@@ -138,9 +140,11 @@
       </div>
       <div class="carousel-item">
         <div class="div10">
+        <%= link_to profil_path(@user2.id) do %>
           <div class="img-top10">
             <%= cl_image_tag @user2.photo.key, class: "image-prof" %>
           </div>
+          <% end %>
           <div class="img-bot10">
             <div class="pi10">
               <%= @user2.first_name %>
@@ -150,9 +154,11 @@
       </div>
       <div class="carousel-item">
         <div class="div10">
+        <%= link_to profil_path(@user3.id) do %>
           <div class="img-top10">
             <%= cl_image_tag @user3.photo.key, class: "image-prof" %>
           </div>
+          <% end %>
           <div class="img-bot10">
             <div class="pi10">
               <%= @user3.first_name %>
