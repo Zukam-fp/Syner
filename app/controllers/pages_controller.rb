@@ -2,9 +2,9 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
-    @match_sort = Match.all.sort_by{ |m| m.count_players }.reverse.first
-    @match_sort2 = Match.all.sort_by{ |m| m.count_players }.reverse.second
-    @match_sort3 = Match.all.sort_by{ |m| m.count_players }.reverse.third
+    @match_sort = Match.all.sort_by{ |m| m.count_players }.reverse.second
+    @match_sort2 = Match.all.sort_by{ |m| m.count_players }.reverse.third
+    @match_sort3 = Match.all.sort_by{ |m| m.count_players }.reverse.fourth
     @user1 = User.all.first
     @user2 = User.all.second
     @user3 = User.all.third

@@ -31,15 +31,15 @@
       <%= link_to match_path(match) do %>
       <div class="notes">
          <p>
-          <i class="fa-solid fa-calendar-days"></i> :
-          <%= match.date %>
+          <i class="fa-solid fa-calendar-days"></i>
+          <%= match.date.strftime("%d/%m/%Y") %>
         </p>
         <p>
-          <i class="fa-solid fa-location-dot"></i> :
+          <i class="fa-solid fa-location-dot"></i>
           <%= match.address %>
         </p>
         <p>
-          <i class="fa-solid fa-users"></i> :
+          <i class="fa-solid fa-users"></i>
           <%= match.user_teams.count%>/10
         </p>
        </div>

@@ -87,6 +87,7 @@
   <%= u.team.match.date.strftime("%d/%m/%Y") %>
   <i class="fa-regular fa-futbol"></i>
   <%= u.position %>
+  <%=  link_to "Details", match_path(u.team.match), class:"btn btn-primary"%>
   </div>
   <% end %>
       <!-- Button trigger modal -->

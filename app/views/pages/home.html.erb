@@ -23,15 +23,15 @@
        <%= link_to match_path(@match_sort) do %>
        <div class="notes">
         <p>
-          <i class="fa-solid fa-calendar-days"></i> :
-          <%= @match_sort.date %>
+          <i class="fa-solid fa-calendar-days"></i>
+          <%= @match_sort.date.strftime("%d/%m/%Y") %>
         </p>
         <p>
-          <i class="fa-solid fa-location-dot"></i> :
+          <i class="fa-solid fa-location-dot"></i>
           <%= @match_sort.address %>
         </p>
         <p>
-          <i class="fa-solid fa-users"></i> :
+          <i class="fa-solid fa-users"></i>
           <%= @match_sort.user_teams.count%>/10
         </p>
        </div>
@@ -58,15 +58,15 @@
       <%= link_to match_path(@match_sort) do %>
       <div class="notes">
           <p>
-          <i class="fa-solid fa-calendar-days"></i> :
-          <%= @match_sort2.date %>
+          <i class="fa-solid fa-calendar-days"></i>
+          <%= @match_sort2.date.strftime("%d/%m/%Y") %>
         </p>
         <p>
-          <i class="fa-solid fa-location-dot"></i> :
+          <i class="fa-solid fa-location-dot"></i>
           <%= @match_sort2.address %>
         </p>
         <p>
-          <i class="fa-solid fa-users"></i> :
+          <i class="fa-solid fa-users"></i>
           <%= @match_sort2.user_teams.count%>/10
         </p>
       </div>
@@ -94,15 +94,15 @@
       <%= link_to match_path(@match_sort3) do%>
       <div class="notes">
          <p>
-          <i class="fa-solid fa-calendar-days"></i> :
-          <%= @match_sort3.date %>
+          <i class="fa-solid fa-calendar-days"></i>
+          <%= @match_sort3.date.strftime("%d/%m/%Y") %>
         </p>
         <p>
-          <i class="fa-solid fa-location-dot"></i> :
+          <i class="fa-solid fa-location-dot"></i>
           <%= @match_sort3.address %>
         </p>
         <p>
-          <i class="fa-solid fa-users"></i> :
+          <i class="fa-solid fa-users"></i>
           <%= @match_sort3.user_teams.count%>/10
         </p>
         </div>
