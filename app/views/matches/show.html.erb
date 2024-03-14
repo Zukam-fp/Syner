@@ -13,7 +13,13 @@
         <%test =  @match.teams.first.user_teams.select {|ut| ut.position =="goalkeeper"}%>
           <% if test.length > 0%>
             <div class="card-goalkeeper2" >
-              <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
+               <div class="testing">
+                  <% if test.first.user.photo.attached? %>
+                    <%= cl_image_tag test.first.user.photo.key, class: "avatar-match seum4" %>
+                  <% else %>
+                    <%= image_tag "téléchargé.png", class: "avatar-match seum4" %>
+                  <% end %>
+                </div>
             </div>
           <% else %>
             <div class="card-goalkeeper" data-action="click->positions#selectPosition" data-action="click->card#replaceWithImage" data-team=<%= @match.teams.first.id %> data-position="goalkeeper" data-positions-target="role">
@@ -27,7 +33,13 @@
         <%test =  @match.teams.first.user_teams.select {|ut| ut.position =="defence"}%>
           <% if test.length > 0%>
               <div class="card-players2" >
-                <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
+                 <div class="testing1">
+                 <% if test.first.user.photo.attached? %>
+                    <%= cl_image_tag test.first.user.photo.key, class: "avatar-match seum4" %>
+                  <% else %>
+                    <%= image_tag "téléchargé.png", class: "avatar-match seum4" %>
+                  <% end %>
+                </div>
               </div>
           <% else %>
             <div class="card-players" data-action="click->positions#selectPosition"data-team=<%= @match.teams.first.id %> data-position="defence" data-positions-target="role">
@@ -40,7 +52,15 @@
         <%test =  @match.teams.first.user_teams.select {|ut| ut.position =="defence2"}%>
           <% if test.length > 0%>
               <div class="card-players2" >
-                <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
+                 <div class="testing1">
+
+                  <% if test.first.user.photo.attached? %>
+                    <%= cl_image_tag test.first.user.photo.key, class: "avatar-match seum4" %>
+                  <% else %>
+                    <%= image_tag "téléchargé.png", class: "avatar-match seum4" %>
+                  <% end %>
+
+                </div>
               </div>
           <% else %>
               <div class="card-players" data-action="click->positions#selectPosition"data-team=<%= @match.teams.first.id %> data-position="defence2" data-positions-target="role">
@@ -54,7 +74,15 @@
         <%test =  @match.teams.first.user_teams.select {|ut| ut.position =="attack"}%>
           <% if test.length > 0%>
               <div class="card-players2" >
-                <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
+                 <div class="testing1">
+
+                 <% if test.first.user.photo.attached? %>
+                    <%= cl_image_tag test.first.user.photo.key, class: "avatar-match seum4" %>
+                  <% else %>
+                    <%= image_tag "téléchargé.png", class: "avatar-match seum4" %>
+                  <% end %>
+
+                </div>
               </div>
           <% else %>
               <div class="card-players" data-action="click->positions#selectPosition" data-team=<%= @match.teams.first.id %> data-position="attack" data-positions-target="role">
@@ -67,7 +95,15 @@
         <%test =  @match.teams.first.user_teams.select {|ut| ut.position =="attack2"}%>
           <% if test.length > 0%>
               <div class="card-players2" >
-                <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
+                  <div class="testing1">
+
+                  <% if test.first.user.photo.attached? %>
+                    <%= cl_image_tag test.first.user.photo.key, class: "avatar-match seum4" %>
+                  <% else %>
+                    <%= image_tag "téléchargé.png", class: "avatar-match seum4" %>
+                  <% end %>
+
+                </div>
               </div>
           <% else %>
               <div class="card-players" data-action="click->positions#selectPosition" data-team=<%= @match.teams.first.id %> data-position="attack2" data-positions-target="role">
@@ -83,7 +119,15 @@
         <%test =  @match.teams.second.user_teams.select {|ut| ut.position =="attack3"}%>
           <% if test.length > 0%>
               <div class="card-players2" >
-                <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
+                 <div class="testing1">
+
+                  <% if test.first.user.photo.attached? %>
+                    <%= cl_image_tag test.first.user.photo.key, class: "avatar-match seum4" %>
+                  <% else %>
+                    <%= image_tag "téléchargé.png", class: "avatar-match seum4" %>
+                  <% end %>
+
+                </div>
               </div>
           <% else %>
               <div class="card-players" data-action="click->positions#selectPosition" data-team=<%= @match.teams.second.id %> data-position="attack3" data-positions-target="role">
@@ -96,7 +140,15 @@
         <%test =  @match.teams.second.user_teams.select {|ut| ut.position =="attack4"}%>
           <% if test.length > 0%>
               <div class="card-players2" >
-                <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
+                 <div class="testing1">
+
+                  <% if test.first.user.photo.attached? %>
+                    <%= cl_image_tag test.first.user.photo.key, class: "avatar-match seum4" %>
+                  <% else %>
+                    <%= image_tag "téléchargé.png", class: "avatar-match seum4" %>
+                  <% end %>
+
+                </div>
               </div>
           <% else %>
               <div class="card-players" data-action="click->positions#selectPosition" data-team=<%= @match.teams.second.id %> data-position="attack4" data-positions-target="role">
@@ -110,7 +162,15 @@
         <%test =  @match.teams.second.user_teams.select {|ut| ut.position =="defence3"}%>
           <% if test.length > 0%>
               <div class="card-players2" >
-                <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
+                  <div class="testing1">
+
+                  <% if test.first.user.photo.attached? %>
+                    <%= cl_image_tag test.first.user.photo.key, class: "avatar-match seum4" %>
+                  <% else %>
+                    <%= image_tag "téléchargé.png", class: "avatar-match seum4" %>
+                  <% end %>
+
+                </div>
               </div>
           <% else %>
               <div class="card-players" data-action="click->positions#selectPosition"data-team=<%= @match.teams.second.id %> data-position="defence3" data-positions-target="role">
@@ -123,7 +183,15 @@
         <%test =  @match.teams.second.user_teams.select {|ut| ut.position =="defence4"}%>
           <% if test.length > 0%>
               <div class="card-players2" >
-                <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
+                  <div class="testing1">
+
+                  <% if test.first.user.photo.attached? %>
+                    <%= cl_image_tag test.first.user.photo.key, class: "avatar-match seum4" %>
+                  <% else %>
+                    <%= image_tag "téléchargé.png", class: "avatar-match seum4" %>
+                  <% end %>
+
+                </div>
               </div>
           <% else %>
               <div class="card-players" data-action="click->positions#selectPosition"data-team=<%= @match.teams.second.id %> data-position="defence4" data-positions-target="role">
@@ -138,7 +206,15 @@
         <%test =  @match.teams.second.user_teams.select {|ut| ut.position =="goalkeeper2"}%>
           <% if test.length > 0%>
               <div class="card-goalkeeper2" >
-                <%= image_tag "logo-syner_preview_rev_1.png", class: "img-position" %>
+                <div class="testing">
+
+                  <% if test.first.user.photo.attached? %>
+                    <%= cl_image_tag test.first.user.photo.key, class: "avatar-match seum4" %>
+                  <% else %>
+                    <%= image_tag "téléchargé.png", class: "avatar-match seum4" %>
+                  <% end %>
+
+                </div>
               </div>
           <% else %>
               <div class="card-goalkeeper" data-action="click->positions#selectPosition" data-action="click->card#replaceWithImage" data-team=<%= @match.teams.second.id %> data-position="goalkeeper2" data-positions-target="role">
