@@ -5,4 +5,6 @@
 //= link popper.js
 //= link bootstrap.min.js
 //= link manifest.json
-//= link application.scss
+
+//= link application.css
+
