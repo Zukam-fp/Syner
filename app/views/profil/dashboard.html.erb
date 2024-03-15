@@ -81,6 +81,7 @@
 </div>
 
 <h3 class="title-style">All Matches</h3>
+  <%# <%=  link_to "Details", match_path(match.current_user), class:"btn btn-primary"%> %>
   <% current_user.user_teams.each do |u| %>
   <div class="card-matches2">
   <i class="fa-solid fa-calendar-days"></i>

@@ -59,12 +59,12 @@ adresses = ["100 Av. Willy Brandt, Lille", "2 Av. des Saules, 59160 Lille", " 40
 # Pour chaque utilisateur
 
 
-match_1 = Match.create!(user: user2, chat_room: ChatRoom.create!, number_of_places: 10, address: adresses.sample, date: Date.today - 1)
+match_1 = Match.create!(user: user3, chat_room: ChatRoom.create!, number_of_places: 10, address: adresses.sample, date: Date.today - 1)
 
 
 team_1 = Team.create!(match: match_1, name:"A")
         Team.create!(match: match_1, name:"B")
-userteam = UserTeam.create!(user: user2, team: team_1, position: "goalkeeper", user_position: 0)
+userteam = UserTeam.create!(user: user3, team: team_1, position: "goalkeeper", user_position: 0)
 
 
 team_a_users = (User.all - [match_1.user]).sample(4)
