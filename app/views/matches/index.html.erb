@@ -10,7 +10,7 @@
     <hr>
   </div>
   </div>
-  <% Match.all.each do |match| %>
+  <% @matches.each do |match| %>
     <div class="card-matches">
     <%= link_to profil_path(match.user.id) do %>
       <div class="div">
