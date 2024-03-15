@@ -2,7 +2,7 @@ class MatchesController < ApplicationController
   before_action :set_navbar_visibility
 
   def index
-
+    @matches = Match.select {|match| match.date >= Date.today}
 
   end
 
